@@ -8,7 +8,7 @@
               "url": "http://www.worldofwarcraft.com",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus velit non purus hendrerit volutpat.",
               "player_count": "5.19 million",
-              "servers": "226 US, 5 Brazillian, 3 Latin America, 12 Oceanic"
+              "servers": "226 US"
 
             },
             {
@@ -27,7 +27,7 @@
               "url": "http://www.runescape.com",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus velit non purus hendrerit volutpat.",
               "player_count": "85,000",
-              "servers": "143 RS3, 95 OldSchool, 3 Classic"
+              "servers": "143 RS3"
             }
           ]
 }
