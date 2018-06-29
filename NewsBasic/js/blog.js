@@ -10,10 +10,10 @@ xhr.onload = function() {
     var blogSection = document.querySelector('#blog');
     if(blogSection){
         var games = '';
-
         for(var i = 0; i < data.games.length; i++) {
-            games += '<article>';
 
+
+            games += '<article>';
 
             games += '<p class="thumbnail"><img src="' + data.games[i].image + '"alt ="' + data.games[i].name + '"></p>';
             games += '<h3>' + data.games[i].name + '</h3>';
@@ -35,6 +35,8 @@ xhr.onload = function() {
             games += '</article>';
 
         }
+
+        games += '<p><a href="https://www.mmo-champion.com/content/?"> <button>Load More</button> </a></p>';
 
         blogSection.querySelector('h2').insertAdjacentHTML('afterend', games);
     }
