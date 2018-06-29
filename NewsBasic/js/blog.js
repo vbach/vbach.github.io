@@ -12,27 +12,27 @@ xhr.onload = function() {
         var games = '';
 
         for(var i = 0; i < data.games.length; i++) {
-            games += '<article>';
+            games.innerHTML += '<article>';
 
 
-            games += '<p class="thumbnail"><img src="' + data.games[i].image + '"alt ="' + data.games[i].name + '"></p>';
-            games += '<h3>' + data.games[i].name + '</h3>';
+            games.innerHTML += '<p class="thumbnail"><img src="' + data.games[i].image + '"alt ="' + data.games[i].name + '"></p>';
+            games.innerHTML += '<h3>' + data.games[i].name + '</h3>';
 
-            games += '<p>' + data.games[i].description + '</p>';
+            games.innerHTML += '<p>' + data.games[i].description + '</p>';
 
-            games += '<dl>';
-                games += '<dt>Rating</dt>';
-                games += '<dd>' + data.games[i].rating + ' out of 5 stars</dd>';
-                games += '<dt>Player Count</dt>';
-                games += '<dd>' + data.games[i].player_count + '</dd>';
+            games.innerHTML += '<dl>';
+                games.innerHTML += '<dt>Rating</dt>';
+                games.innerHTML += '<dd>' + data.games[i].rating + ' out of 5 stars</dd>';
+                games.innerHTML += '<dt>Player Count</dt>';
+                games.innerHTML += '<dd>' + data.games[i].player_count + '</dd>';
 
-                games += '<dt>Servers</dt>';
-                games += '<dd>' + data.games[i].servers + '</dd>';
-             games += '</dl>';
-            games += '<p><a href="' + data.games[i].url + '">Read More</a></p>';
+                games.innerHTML += '<dt>Servers</dt>';
+                games.innerHTML += '<dd>' + data.games[i].servers + '</dd>';
+             games.innerHTML += '</dl>';
+            games.innerHTML += '<p><a href="' + data.games[i].url + '">Read More</a></p>';
 
 
-            games += '</article>';
+            games.innerHTML += '</article>';
 
         }
 
