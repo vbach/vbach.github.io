@@ -17,8 +17,8 @@ xhr.onload = function () {
 
     if (gallerySection) {
         var images = '';
-        for (var i = 0; i < gallery.images.length; i++) {
-            images += '<p><img src=' + gallery.images[i].image + '></p>';
+        for (var i = 0; i < gallery.WoW.length; i++) {
+            images += '<p><img src=' + gallery.WoW[i].image + '></p>';
         }
     }
     gallerySection.querySelector('h2').insertAdjacentHTML('afterend', images);
