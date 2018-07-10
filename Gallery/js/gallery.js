@@ -3,10 +3,9 @@ document.querySelector("#gallery h2").innerHTML = "World of Warcraft Game Play";
 
 // Using AJAX to load in JSON file
 var xhr = new XMLHttpRequest();
-xhr.onload = function() {
+xhr.onload = function () {
     // Save the JSON data locally
     var gallery = JSON.parse(xhr.responseText);
-}
 
 
 // Variables: currentImg, nextImg
@@ -14,13 +13,15 @@ xhr.onload = function() {
     var nextImg;
 
 // If user clicks next button, go to next image
-    document.getElementById('next').onclick = function () {
-        var gallery = document.getElementById('gallery');
+    var gallerySection = document.getElementById('#gallery');
+
+    if (gallerySection) {
         var images = '';
-        for (i = 0; i > gallery.WoW.length; i++){
-            images += '<p><img src=' + gallery.WoW[i].image + '>';
+        for (var i = 0; i < gallery.images.length; i++) {
+            images += '<p><img src=' + gallery.images[i].image + '></p>';
         }
     }
+    gallerySection.querySelector('h2').insertAdjacentHTML('afterend', images);
 
 
     // Read in click event
@@ -38,3 +39,4 @@ xhr.onload = function() {
     xhr.open('GET', 'gallery.json', true);
     xhr.send(null);
 
+}
