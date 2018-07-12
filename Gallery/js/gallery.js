@@ -18,20 +18,20 @@ xhr.onload = function() {
 
     function nextImage() {
         i = i + 1;
-        i = i % arrayOfImages.length;
-        return arrayOfImages[i];
+        i = i % data.games.length;
+        return data.games[i].image;
     }
 
     function previousImage() {
         // Coding for previous image here
         if (i === 0) {
-            i = arrayOfImages.length;
+            i = data.games.length;
         }
         i = i - 1;
-        return arrayOfImages[i];
+        return data.games[i].image;
     }
 
-    gallery.src = arrayOfImages[i];
+    gallery.src = data.games[i].image;
 
 
 // Event listener for next button
@@ -47,7 +47,7 @@ xhr.onload = function() {
     );
 }
 
-xhr.open('GET', 'https://vbach.github.io/gallery.json', true);
+xhr.open('GET', 'https://vbach.github.io/Gallery/js/gallery.json', true);
 xhr.send(null);
 
 //////////SCRAP///////////
