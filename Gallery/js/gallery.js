@@ -9,7 +9,6 @@ xhr.onload = function() {
 
     var arrayOfImages = ["http://i67.tinypic.com/11ty5ux.jpg", "http://i65.tinypic.com/2ewdqva.jpg",
         "http://i66.tinypic.com/o08d1k.jpg", "http://i66.tinypic.com/657qs3.jpg", "http://i67.tinypic.com/2ibn30g.jpg"];
-    var arrayLength = arrayOfImages.length;
     var gallery = document.querySelector("#gallery img");
     var nextButton = document.getElementById('next');
     var previousButton = document.getElementById('previous');
