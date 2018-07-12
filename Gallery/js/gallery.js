@@ -1,36 +1,69 @@
 // Change Title
 document.querySelector("#gallery h2").innerHTML = "World of Warcraft Game Play";
 
-// JSON Array
-var txt = '{ "WoW" : [' +
-    '{ "imageUrl" : "http://i64.tinypic.com/242h72c.jpg", "title" : "Game Play" } ] }';
-var images = JSON.parse(txt);
+// use Ajax to load JSON file
+var xhr = new XMLHttpRequest();
+xhr.onload = function() {
+    // Save the JSON data locally
+    var data = JSON.parse(xhr.responseText);
+
+    var arrayOfImages = ["http://i67.tinypic.com/11ty5ux.jpg", "http://i65.tinypic.com/2ewdqva.jpg",
+        "http://i66.tinypic.com/o08d1k.jpg", "http://i66.tinypic.com/657qs3.jpg", "http://i67.tinypic.com/2ibn30g.jpg"];
+    var arrayLength = arrayOfImages.length;
+    var gallery = document.querySelector("#gallery img");
+    var nextButton = document.getElementById('next');
+    var previousButton = document.getElementById('previous');
+    var i = 0;
+
+// Next Image
+
+    function nextImage() {
+        i = i + 1;
+        i = i % arrayOfImages.length;
+        return arrayOfImages[i];
+    }
+
+    function previousImage() {
+        // Coding for previous image here
+        if (i === 0) {
+            i = arrayOfImages.length;
+        }
+        i = i - 1;
+        return arrayOfImages[i];
+    }
+
+    gallery.src = arrayOfImages[i];
 
 
-function changeImage(event){
-    var image = event.target.src;
-    var parent = event.target.parentElement;
-    var largeImage = document.querySelector('#gallery img');
-
-    largeImage.src = image;
+// Event listener for next button
+    nextButton.addEventListener('click',
+        function (e) {
+            gallery.src = nextImage();
+        }
+    );
+    previousButton.addEventListener('click',
+        function (e) {
+            gallery.src = previousImage();
+        }
+    );
 }
 
-// Add event listener to next button
-var nextButton = document.querySelectorAll('.pagination li:last-of-type');
-nextButton.addEventListener('click', changeImage);
+xhr.open('GET', 'https://vbach.github.io/gallery.json', true);
+xhr.send(null);
 
-var previousButton = document.querySelectorAll('.pagination li:first-of-type');
-previousButton.addEventListener('click', changeImage);
+//////////SCRAP///////////
+/*
+function nextImage(arrayOfImages){
+    var currentIndex = '';
 
-// Change Image via Next Button
+for(var i = 0; i < arrayOfImages.length; i++){
+    if(currentIndex >= 0 && currentIndex < arrayOfImages.length){
+        currentIndex = arrayOfImages[i + 1];
+    }
+}
+    gallery.src = currentIndex;
+
+}
+*/
 
 
-
-
-
-// Load data in from JSON
-document.querySelector('#gallery img').innerHTML = images.WoW[0].image;
-
-// IF user selects NEXT, go to next image
-// Keep Track of CURRENT IMAGE
-// IF user selects PREVIOUS, go to previous image
