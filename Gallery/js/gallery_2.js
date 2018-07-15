@@ -20,8 +20,8 @@ xhr.onload = function() {
 // Next Image
     function nextImage() {
         i = i + 1;
-        i = i % arrayOfImages.length;
-        return arrayOfImages[i];
+        i = i % data.games.length;
+        return data.games[i].image;
     }
 
 // Previous Image
