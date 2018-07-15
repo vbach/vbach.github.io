@@ -35,7 +35,7 @@ xhr.onload = function() {
     }
 
 // Setting the initial image of the array.
-    gallery.src = arrayOfImages[i];
+    gallery.src = data.games[i].image;
 
 // Event listener for next button
     nextButton.addEventListener('click',
