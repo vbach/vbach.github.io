@@ -3,27 +3,27 @@
   "games": [
             {
               "image": "http://i66.tinypic.com/657qs3.jpg",
-              "title": "World of Warcraft: Legion",
-              "alt": "World of Warcraft began in the either 2000's, now almost 20 years and 7 expansions later, they still have a booming player base."
+              "image_title": "World of Warcraft: Legion",
+              "alt": "World of Warcraft began in the early 2000's, now almost 20 years and 7 expansions later, they still have a booming player base."
             },
             {
               "image": "http://i66.tinypic.com/o08d1k.jpg",
-              "title": "World of Warcraft: Battle Pets",
+              "image_title": "World of Warcraft: Battle Pets",
               "alt": "In the Mists of Pandaria Exapansion, WoW introduced Battle Bets. Explore Azeroth while battling and collecting more!"
             },
             {
               "image": "http://i67.tinypic.com/11ty5ux.jpg",
-              "title": "World of Warcraft: Warlock",
+              "image_title": "World of Warcraft: Warlock",
               "alt": "You'll defeat hundreds of beasts, best many foes and make many friends."
             },
             {
               "image": "http://i65.tinypic.com/2ewdqva.jpg",
-              "title": "World of Warcraft: Character Creation",
+              "image_title": "World of Warcraft: Character Creation",
               "alt": "With 13 different races, 2 factions and 12 classes, it's easy to create a character you'll love."
             },
             {
               "image": "http://i67.tinypic.com/2ibn30g.jpg",
-              "title": "World of Warcraft: Game Play",
+              "image_title": "World of Warcraft: Game Play",
               "alt": "WoW boasts extensive UI functionality allowing for addons and complete customization of their UI despite that their default offers many benefits."
             }
           ]
