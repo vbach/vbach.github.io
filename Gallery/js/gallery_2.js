@@ -13,6 +13,7 @@ xhr.onload = function() {
     var arrayOfTitles = ["World of Warcraft: Legion"]; */
     var gallery = document.querySelector("#gallery img");
     var title = document.querySelectorAll('h3');
+    var alt = document.querySelector('h3 p')
     var nextButton = document.getElementById('next');
     var previousButton = document.getElementById('previous');
     var i = 0;
@@ -36,6 +37,8 @@ xhr.onload = function() {
 
 // Setting the initial image of the array.
     gallery.src = data.games[i].image;
+    title.innerHTML = data.games[i].title;
+    alt.innerHTML = data.games[i].alt;
 
 // Event listener for next button
     nextButton.addEventListener('click',
