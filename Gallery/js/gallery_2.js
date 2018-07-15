@@ -8,9 +8,6 @@ xhr.onload = function() {
     // Save the JSON data locally
     var data = JSON.parse(xhr.responseText);
 
-    /*var arrayOfImages = ["http://i67.tinypic.com/11ty5ux.jpg", "http://i65.tinypic.com/2ewdqva.jpg",
-        "http://i66.tinypic.com/o08d1k.jpg", "http://i66.tinypic.com/657qs3.jpg", "http://i67.tinypic.com/2ibn30g.jpg"];
-    var arrayOfTitles = ["World of Warcraft: Legion"]; */
     var gallery = document.querySelector("#gallery img");
     var title = document.querySelectorAll('h3');
     var alt = document.getElementById('alt');
@@ -25,26 +22,31 @@ xhr.onload = function() {
         return data.games[i].image;
     }
 
+    function nextTitle() {
+        i = i + 1;
+        i = i % data.games.length;
+        return data.games[i].title;
+    }
+
 // Previous Image
     function previousImage() {
         // Coding for previous image here
         if (i === 0) {
-            i = arrayOfImages.length;
+            i = data.games.length;
         }
         i = i - 1;
-        return arrayOfImages[i];
+        return data.games[i].image;
     }
 
 // Setting the initial image of the array.
     gallery.src = data.games[i].image;
-    title.innerText = data.games[i].title;
-    alt.innerText = data.games[i].alt;
 
 // Event listener for next button
     nextButton.addEventListener('click',
         // On click run this function to retrieve data from nextImage function
         function (e) {
             gallery.src = nextImage();
+            title.innerText = nextTitle();
         }
     );
 
