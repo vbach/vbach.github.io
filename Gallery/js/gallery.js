@@ -1,68 +1,59 @@
 // Change Title
-document.querySelector("#gallery h2").innerHTML = "World of Warcraft Game Play";
+document.querySelector("#gallery h2").innerHTML = "World of Warcraft Gallery";
 
-// use Ajax to load JSON file
-var xhr = new XMLHttpRequest();
-xhr.onload = function() {
-    // Save the JSON data locally
-    var data = JSON.parse(xhr.responseText);
-
-    var arrayOfImages = ["http://i67.tinypic.com/11ty5ux.jpg", "http://i65.tinypic.com/2ewdqva.jpg",
-        "http://i66.tinypic.com/o08d1k.jpg", "http://i66.tinypic.com/657qs3.jpg", "http://i67.tinypic.com/2ibn30g.jpg"];
-    var gallery = document.querySelector("#gallery img");
-    var nextButton = document.getElementById('next');
-    var previousButton = document.getElementById('previous');
-    var i = 0;
+var arrayOfImages = ["http://i67.tinypic.com/11ty5ux.jpg", "http://i65.tinypic.com/2ewdqva.jpg",
+    "http://i66.tinypic.com/o08d1k.jpg", "http://i66.tinypic.com/657qs3.jpg", "http://i67.tinypic.com/2ibn30g.jpg"];
+var arrayOfTitles = ["World of Warcraft: Legion"];
+var gallery = document.querySelector("#gallery img");
+var title = document.querySelectorAll('h3');
+var nextButton = document.getElementById('next');
+var previousButton = document.getElementById('previous');
+var i = 0;
 
 // Next Image
+function nextImage() {
+    i = i + 1;
+    i = i % arrayOfImages.length;
+    return arrayOfImages[i];
+}
 
-    function nextImage() {
+// Previous Image
+function previousImage() {
+    // Coding for previous image here
+    if (i === 0) {
+        i = arrayOfImages.length;
+    }
+    i = i - 1;
+    return arrayOfImages[i];
+}
+
+// Add Title and Comment
+function titleAndComment(){
+    if (i === 0){
         i = i + 1;
-        i = i % data.games.length;
-        return data.games[i].image;
+        i = i % arrayOfTitles.length;
+        return arrayOfTitles[i];
     }
+}
 
-    function previousImage() {
-        // Coding for previous image here
-        if (i === 0) {
-            i = data.games.length;
-        }
-        i = i - 1;
-        return data.games[i].image;
-    }
-
-    gallery.src = data.games[i].image;
-
+// Setting the initial image of the array.
+gallery.src = arrayOfImages[i];
+title.innerHTML = arrayOfTitles[i];
 
 // Event listener for next button
-    nextButton.addEventListener('click',
-        function (e) {
-            gallery.src = nextImage();
-        }
-    );
-    previousButton.addEventListener('click',
-        function (e) {
-            gallery.src = previousImage();
-        }
-    );
-}
-
-xhr.open('GET', 'https://vbach.github.io/Gallery/js/gallery.json', true);
-xhr.send(null);
-
-//////////SCRAP///////////
-/*
-function nextImage(arrayOfImages){
-    var currentIndex = '';
-
-for(var i = 0; i < arrayOfImages.length; i++){
-    if(currentIndex >= 0 && currentIndex < arrayOfImages.length){
-        currentIndex = arrayOfImages[i + 1];
+nextButton.addEventListener('click',
+    // On click run this function to retrieve data from nextImage function
+    function (e) {
+        gallery.src = nextImage();
     }
-}
-    gallery.src = currentIndex;
+);
 
-}
-*/
+// Event listener for previous button
+previousButton.addEventListener('click',
+    // On click run this function to retrieve data from previousImage function
+    function (e) {
+        gallery.src = previousImage();
+    }
+);
 
 
