@@ -40,6 +40,16 @@ xhr.onload = function() {
         return data.games[i].image;
     }
 
+// Previous Title
+    function previousTitle() {
+        // Coding for previous image here
+        if (i === 0) {
+            i = data.games.length;
+        }
+        i = i - 1;
+        return data.games[i].image_title;
+    }
+
 // Setting the initial image of the array.
     gallery.src = data.games[i].image;
     title.textContent = data.games[i].image_title;
@@ -59,6 +69,7 @@ xhr.onload = function() {
         // On click run this function to retrieve data from previousImage function
         function (e) {
             gallery.src = previousImage();
+            title.textContent = previousTitle();
         }
     );
 }
