@@ -4,31 +4,34 @@ var heading = document.querySelector('h1');
 
 heading.innerHTML = "World of Warcraft Classes & Specializations";
 
-function createNode(element) {
+function createNode(element){
     return document.createElement(element);
 }
 
-function append(parent, el) {
+function append(parent, el){
     return parent.appendChild(el);
 }
 
+
 const ul = document.getElementById('classes');
-const url = 'https://us.api.battle.net/data/wow/playable-class/7?namespace=static-us&locale=en_US&access_token=8wv3ucgge7jw75zvhsqnreqa';
+const url = 'https://us.api.battle.net/wow/data/character/races?locale=en_US&apikey=dcyyqq587vbf4z424h36rcaddafw6dgr';
+
+// Fetch the API
 fetch(url)
-    .then((resp) => resp.json())
+    .then((resp) => resp.json()) // Data into JSON
     .then(function(data) {
-        let classes = data.results;
-        return classes.map(function(wowclass) {
-            let li = createNode('li'),
-                img = createNode('img'),
-                span = createNode('span');
-            //img.src = author.picture.medium;
-            span.innerHTML = `${classes.name} ${classes.specializations.name}`;
-            append(li, img);
-            append(li, span);
-            append(ul, li);
-        })
+    let classes = data.results;
+    return classes.map(function(wowclass) {
+        let li = createNode('li'),
+            span = createNode('span');
+        span.innerHtml = '${classes.races.name} ${classes.races.side}';
+        append(li, span);
+        append(ul, li);
+
     })
-    .catch(function(error) {
-        console.log(error);
-    });
+
+})
+.catch(function(error)
+{
+    console.log(error);
+});
