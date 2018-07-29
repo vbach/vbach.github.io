@@ -21,14 +21,14 @@ xhr.onload = function() {
             games += '<p>' + data.games[i].description + '</p>';
 
             games += '<dl>';
-                games += '<dt>Rating</dt>';
-                games += '<dd>' + data.games[i].rating + ' out of 5 stars</dd>';
-                games += '<dt>Player Count</dt>';
-                games += '<dd>' + data.games[i].player_count + '</dd>';
+            games += '<dt>Rating</dt>';
+            games += '<dd>' + data.games[i].rating + ' out of 5 stars</dd>';
+            games += '<dt>Player Count</dt>';
+            games += '<dd>' + data.games[i].player_count + '</dd>';
 
-                games += '<dt>Servers</dt>';
-                games += '<dd>' + data.games[i].servers + '</dd>';
-             games += '</dl>';
+            games += '<dt>Servers</dt>';
+            games += '<dd>' + data.games[i].servers + '</dd>';
+            games += '</dl>';
             games += '<p><a href="' + data.games[i].url + '">Read More</a></p>';
 
 
@@ -43,5 +43,5 @@ xhr.onload = function() {
 }
 
 // Call Ajax and close
-xhr.open('GET', 'https://vbach.github.io/data.json', true);
+xhr.open('GET', 'https://vbach.github.io/NewsBasic/data.json', true);
 xhr.send(null);
