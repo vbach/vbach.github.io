@@ -1,10 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <title>Hiker's Guide</title>
 </head>
 <body>
+<div id="wrapper">
+    <header>
+        <section id="gallery">
+            <!-- Logo -->
+            <h1>Hiker's Guide Logo</h1>
 
+            <!-- Navigation -->
+            <nav>
+                <p><a href="index.html">HOME</a> | <a href="destinations.html">DESTINATIONS</a> | <a href="events.html">EVENTS</a>
+                    | <a href="connect.html">CONNECT</a> &nbsp; &nbsp; <!-- Icon --> <a href="#">LOGIN</a></p>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Modal Login Form -->
+    <div id="login">
+        <h3>Login</h3>
+        <p>Facebook | Twitter | Google Plus</p>
+        <p>OR</p>
+        <form action="/login" method="post">
+            <fieldset>
+                <p><label for="uname">Username</label></p>
+                <input type="text" placeholder="Username" name="uname" id="uname" required>
+                <p><label for="pwd">Password</label></p>
+                <input type="text" placeholder="Password" name="pwd" id="pwd" required>
+            </fieldset>
+
+            <p><button type="submit">LOGIN</button></p>
+
+            OR<br/>
+
+            <p><button type="button">SIGN UP</button></p>
+
+
+            <label for="remember">Remember me</label>
+            <input type="checkbox" checked="checked" name="remember" id="remember"> | Forgot password?
+
+        </form>
+    </div>
+
+    <!-- Modal SignUp Form -->
+    <div id="signupform">
+        <h3>SIGN UP</h3>
+        <p>Facebook | Twitter | Google Plus</p>
+        <p>OR</p>
+        <form action="/signup" method="post">
+            <fieldset>
+                <p><label for="fname">First Name</label></p>
+                <input type="text" placeholder="First Name" name="fname" id="fname" required>
+
+                <p><label for="lname">Last Name</label></p>
+                <input type="text" placeholder="Last Name" name="lname" id="lname" required>
+
+                <p><label for="email">E-mail</label></p>
+                <input type="text" placeholder="E-mail" name="email" id="email" required>
+
+                <p><label for="pass">Password</label></p>
+                <input type="text" placeholder="Password" name="pass" id="pass" required>
+
+
+                <p><label for="pwd">Confirm Password</label></p>
+                <input type="text" placeholder="Confirm Password" name="cpwd" id="cpwd" required>
+
+            </fieldset>
+
+            <p><button type="submit">SIGN UP</button></p>
+
+            OR<br/>
+
+            <p><button type="button">LOGIN</button></p>
+
+        </form>
+    </div>
+
+    <main>
+        <!-- Destinations -->
+        <section id="destinations">
+            <h2>Destinations</h2>
+
+            <ul>
+                <li>Image
+                <ul>
+                    <li><h4>Lorem Ipsum</h4></li>
+                    <li>city, ST</li>
+                </ul>
+                </li>
+
+                <li>Image
+                    <ul>
+                        <li><h4>Lorem Ipsum</h4></li>
+                        <li>city, ST</li>
+                    </ul>
+                </li>
+
+                <li>Image
+                    <ul>
+                        <li><h4>Lorem Ipsum</h4></li>
+                        <li>city, ST</li>
+                    </ul>
+                </li>
+
+                <li>Image
+                    <ul>
+                        <li><h4>Lorem Ipsum</h4></li>
+                        <li>city, ST</li>
+                    </ul>
+                </li>
+
+                <li>Image
+                    <ul>
+                        <li><h4>Lorem Ipsum</h4></li>
+                        <li>city, ST</li>
+                    </ul>
+                </li>
+
+                <li>Image
+                    <ul>
+                        <li><h4>Lorem Ipsum</h4></li>
+                        <li>city, ST</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <input type="button" value="LOAD MORE"/>
+        </section>
+
+
+        <!-- Upcoming Events -->
+        <section id="events">
+            <h3>Upcoming Events</h3>
+            <ul>
+                <li>Nov 14
+                    <ul>
+                        <li><strong>Consectetur adipiscing elit</strong></li>
+                        <li>Cras ut orci sit amet quam vehicula feugiat.</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Nov 9
+                    <ul>
+                        <li><strong>Consectetur adipiscing elit</strong></li>
+                        <li>Cras ut orci sit amet quam vehicula feugiat.</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Oct 23
+                    <ul>
+                        <li><strong>Consectetur adipiscing elit</strong></li>
+                        <li>Cras ut orci sit amet quam vehicula feugiat.</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Nov 14
+                    <ul>
+                        <li><strong>Consectetur adipiscing elit</strong></li>
+                        <li>Cras ut orci sit amet quam vehicula feugiat.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Hikers -->
+        <section id="hikers">
+            <h3>New Hikers</h3>
+            <ul>
+                <li>Image
+                    <ul>
+                        <li><strong>Smith, John</strong></li>
+                        <li>Orlando, FL</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul>
+                <li>Image
+                    <ul>
+                        <li><strong>Rosen, Thomas</strong></li>
+                        <li>Denver, CO</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul>
+                <li>Image
+                    <ul>
+                        <li><strong>Martin, Amy</strong></li>
+                        <li>San Francisco, CA</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul>
+                <li>Image
+                    <ul>
+                        <li><strong>Jones, Matthew</strong></li>
+                        <li>New York, NY</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <h3>About</h3>
+            <p><strong>Lorem ipsum dolor sit amet</strong><br/>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, lacus ut sollicitudin volutpat,
+                metus ipsum mollis nulla, non semper mi diam in mauris.</p>
+            <p>Maecenas eget ipsum commodo, scelerisque mi maximus, bibendum dolor. Duis interdum elementum tristique.
+                Phasellus varius rutrum scelerisque. Cras eleifend, elit eu euismod elementum, erat augue convallis
+                elit, luctus accumsan quam est at velit. Sed congue nisl in eleifend consequat. Quisque faucibus ante
+                feugiat, imperdiet enim vel, fermentum ligula. Mauris nec ex posuere, sagittis lorem in, ornare nibh.
+                Pellentesque quis urna eleifend diam aliquet imperdiet vitae eu metus.</p>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <section id="copyright">
+            &copy; HIKER'S GUIDE, INC | PRIVACY | TERMS | NEWSLETTER
+        </section>
+
+        <section id="socialmedia">
+            <a href="http://www.facebook.com">Facebook</a>
+            <a href="http://www.twitter.com">Twitter</a>
+            <a href="http://www.youtube.com">Youtube</a>
+            <a href="http://plus.google.com">Google Plus</a>
+            <a href="http://www.instagram.com">Instagram</a>
+        </section>
+    </footer>
+</div>
 </body>
 </html>

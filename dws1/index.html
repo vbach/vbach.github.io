@@ -14,7 +14,7 @@
             <!-- Navigation -->
             <nav>
                 <p><a href="index.html">HOME</a> | <a href="destinations.html">DESTINATIONS</a> | <a href="events.html">EVENTS</a>
-                    | <a href="connect.html">CONNECT</a> &nbsp; &nbsp; <!-- Icon --> <a href="login.html">LOGIN</a></p>
+                    | <a href="connect.html">CONNECT</a> &nbsp; &nbsp; <!-- Icon --> <a href="#">LOGIN</a></p>
             </nav>
         </section>
         <aside>
@@ -26,6 +26,67 @@
         </aside>
 
     </header>
+
+    <!-- Modal Login Form -->
+    <div id="login">
+        <h3>Login</h3>
+        <p>Facebook | Twitter | Google Plus</p>
+        <p>OR</p>
+        <form action="/login" method="post">
+            <fieldset>
+                <p><label for="uname">Username</label></p>
+                <input type="text" placeholder="Username" name="uname" id="uname" required>
+                <p><label for="pwd">Password</label></p>
+                <input type="text" placeholder="Password" name="pwd" id="pwd" required>
+            </fieldset>
+
+            <p><button type="submit">LOGIN</button></p>
+
+            OR<br/>
+
+            <p><button type="button">SIGN UP</button></p>
+
+
+            <label for="remember">Remember me</label>
+            <input type="checkbox" checked="checked" name="remember" id="remember"> | Forgot password?
+
+        </form>
+    </div>
+
+    <!-- Modal SignUp Form -->
+    <div id="signupform">
+        <h3>SIGN UP</h3>
+        <p>Facebook | Twitter | Google Plus</p>
+        <p>OR</p>
+        <form action="/signup" method="post">
+            <fieldset>
+                <p><label for="fname">First Name</label></p>
+                <input type="text" placeholder="First Name" name="fname" id="fname" required>
+
+                <p><label for="lname">Last Name</label></p>
+                <input type="text" placeholder="Last Name" name="lname" id="lname" required>
+
+                <p><label for="email">E-mail</label></p>
+                <input type="text" placeholder="E-mail" name="email" id="email" required>
+
+                <p><label for="pass">Password</label></p>
+                <input type="text" placeholder="Password" name="pass" id="pass" required>
+
+
+                <p><label for="pwd">Confirm Password</label></p>
+                <input type="text" placeholder="Confirm Password" name="cpwd" id="cpwd" required>
+
+            </fieldset>
+
+            <p><button type="submit">SIGN UP</button></p>
+
+            OR<br/>
+
+            <p><button type="button">LOGIN</button></p>
+
+        </form>
+    </div>
+
     <main>
         <!-- Posts -->
         <article>
@@ -41,8 +102,6 @@
                         <li><input type="button" value="Read More"/></li>
                     </ul>
                 </li>
-            </ul>
-            <ul>
                 <li>Article Image</li>
                 <li><h4>LOREM IPSUM DOLOR</h4>
                     <ul>
@@ -54,9 +113,6 @@
                         <li><input type="button" value="Read More"/></li>
                     </ul>
                 </li>
-            </ul>
-
-            <ul>
                 <li>Article Image</li>
                 <li><h4>LOREM IPSUM DOLOR</h4>
                     <ul>
@@ -83,7 +139,7 @@
         <!-- Signup Slogan -->
         <section id="signup">
             <p>The biggest adventure of your life is right around the corner. <strong><a href="signup.html">Sign up
-                Now!</a></strong></p>
+                Now!</a></strong> <img src="images/arrow.png" alt="right arrow"></p>
         </section>
 
 
@@ -180,7 +236,7 @@
 
     </section>
     </main>
-    
+
     <!-- Footer -->
     <footer>
 
@@ -189,7 +245,11 @@
         </section>
 
         <section id="socialmedia">
-            Facebook Twitter Youtube Google Plus Instagram
+            <a href="http://www.facebook.com">Facebook</a>
+            <a href="http://www.twitter.com">Twitter</a>
+            <a href="http://www.youtube.com">Youtube</a>
+            <a href="http://plus.google.com">Google Plus</a>
+            <a href="http://www.instagram.com">Instagram</a>
         </section>
     </footer>
 </div>
