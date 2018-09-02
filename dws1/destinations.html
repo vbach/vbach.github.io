@@ -27,9 +27,9 @@
         <form action="/login" method="post">
             <fieldset>
                 <p><label for="uname">Username</label></p>
-                <input type="text" placeholder="Username" name="uname" id="uname" required>
+                <input type="text" placeholder="Username is the email you signed up with." name="uname" id="uname" required="required">
                 <p><label for="pwd">Password</label></p>
-                <input type="text" placeholder="Password" name="pwd" id="pwd" required>
+                <input type="password" placeholder="Must have at least 8 characters." name="pwd" id="pwd" required="required">
             </fieldset>
 
             <p><button type="submit">LOGIN</button></p>
@@ -53,20 +53,21 @@
         <form action="/signup" method="post">
             <fieldset>
                 <p><label for="fname">First Name</label></p>
-                <input type="text" placeholder="First Name" name="fname" id="fname" required>
+                <input type="text" name="fname" id="fname" required="required">
 
                 <p><label for="lname">Last Name</label></p>
-                <input type="text" placeholder="Last Name" name="lname" id="lname" required>
+                <input type="text" name="lname" id="lname" required="required">
 
                 <p><label for="email">E-mail</label></p>
-                <input type="text" placeholder="E-mail" name="email" id="email" required>
+                <input type="email" name="email" id="email" required="required">
 
                 <p><label for="pass">Password</label></p>
-                <input type="text" placeholder="Password" name="pass" id="pass" required>
+                <input type="password" name="pass" id="pass" required="required"><br/>
+                <small>Password must consist of at least 8 characters or numbers.</small>
 
 
                 <p><label for="pwd">Confirm Password</label></p>
-                <input type="text" placeholder="Confirm Password" name="cpwd" id="cpwd" required>
+                <input type="password" name="cpwd" id="cpwd" required="required">
 
             </fieldset>
 
@@ -229,5 +230,4 @@
     </footer>
 </div>
 </body>
-<script src="js/content.js"></script>
 </html>
