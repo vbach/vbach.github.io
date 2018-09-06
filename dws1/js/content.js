@@ -16,7 +16,7 @@ var xhr = new XMLHttpRequest();
         for (var i = 0; i < responseObject.posts.length; i++) {
 
             blogContent += '<ul>';
-            blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '" class="blogimage" /></li>';
+            blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '" width="200px" height="200px" /></li>';
             blogContent += '<li><h4>' + responseObject.posts[i].title + '</h4></li>';
 
             if (responseObject.posts[i].subtitle) {
@@ -66,7 +66,7 @@ var xhr = new XMLHttpRequest();
 
         for (i = 0; i < responseObject.hikers.length; i++) {
 
-            newHikers += '<li><img src="' + responseObject.hikers[i].imageURL + '" class="blogimage"/></li>';
+            newHikers += '<li><img src="' + responseObject.hikers[i].imageURL + '" width="200px" height="200px"/></li>';
             newHikers += '<ul>';
             newHikers += '<li><strong>' + responseObject.hikers[i].lastname + ', ' + responseObject.hikers[i].firstname + '</strong></li>';
             newHikers += '<li>' + responseObject.hikers[i].city + ', ' + responseObject.hikers[i].state + '</li>';
@@ -134,7 +134,3 @@ var xhr = new XMLHttpRequest();
 
     var upcomingEvents = document.querySelector('section#upcomingEvents');
     upcomingEvents.innerHTML = upcomingContent;*/
-
-xhr.open('GET', 'https://jbonline.bitbucket.io/data/hikersguide.json', true);
-xhr.send(null);
-
