@@ -5,40 +5,79 @@
 
 
 var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
+xhr.onload = function () {
 
-        var responseObject = JSON.parse(xhr.responseText);
+    var responseObject = JSON.parse(xhr.responseText);
 
-        // Blog Content
+    // Destinations
+    if ('section#destinations') {
+        var locationContent = '';
+        locationContent += '<h1>Destinations</h1>';
 
-        var blogContent = '';
+        for (i = 0; i < responseObject.locations.length; i++) {
 
-        for (var i = 0; i < responseObject.posts.length; i++) {
-
-            blogContent += '<ul>';
-            blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '" width="200px" height="200px" /></li>';
-            blogContent += '<li><h4>' + responseObject.posts[i].title + '</h4></li>';
-
-            if (responseObject.posts[i].subtitle) {
-                blogContent += '<li><h5>' + responseObject.posts[i].subtitle + '</h5>';
-            }
-
-            blogContent += '<li>' + responseObject.posts[i].text + '</li>';
-
-            if (responseObject.posts[i].moreLink) {
-                blogContent += '<li> <a href="' + responseObject.posts[i].moreLink + '"><input type="button" id="readMore" value="Read More"/></a></li>';
-            } else {
-                blogContent += '<li><a href="#"><input type="button" id="readMore" value="Read More"/></a></li>';
-            }
-
-            blogContent += '</ul>';
+            locationContent += '<h2>' + responseObject.locations[i].title + '</h2>';
+            locationContent += '<p><strong>' + responseObject.locations[i].city + ', ' + responseObject.locations[i].state + '</p></strong>';
+            locationContent += '<p>' + responseObject.locations[i].text + '</p>';
         }
 
-        var blogPosts = document.querySelector('article#blogposts');
-        blogPosts.innerHTML = blogContent;
+        var destinations = document.querySelector('section#destinations');
+        destinations.innerHTML = locationContent;
+    }
+    // Upcoming Events
+    if ('section#upcomingEvents') {
+        var upcomingContent = '';
+
+        upcomingContent += '<h2>Events</h2>';
+        upcomingContent += '<table>\n' +
+            '<tr>\n' +
+            '<th>DATE</th>\n' +
+            '<th>INFORMATION</th>\n' +
+            '</tr>\n';
+
+        for (i = 0; i < responseObject.events.length; i++) {
+            upcomingContent += '<tr>';
+            upcomingContent += '<td>' + responseObject.events[i].date + '</td>';
+            upcomingContent += '<td><strong>' + responseObject.events[i].title + '</strong> <p>' + responseObject.events[i].text + '</p></td>';
+            upcomingContent += '</tr>';
+        }
+
+        upcomingContent += '</table>';
+
+        var upcomingEvents = document.querySelector('section#upcomingEvents');
+        upcomingEvents.innerHTML = upcomingContent;
+    }
+    // Blog Content
+
+    var blogContent = '';
+
+    for (var i = 0; i < responseObject.posts.length; i++) {
+
+        blogContent += '<ul>';
+        blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '" width="200px" height="200px" /></li>';
+        blogContent += '<li><h4>' + responseObject.posts[i].title + '</h4></li>';
+
+        if (responseObject.posts[i].subtitle) {
+            blogContent += '<li><h5>' + responseObject.posts[i].subtitle + '</h5>';
+        }
+
+        blogContent += '<li>' + responseObject.posts[i].text + '</li>';
+
+        if (responseObject.posts[i].moreLink) {
+            blogContent += '<li> <a href="' + responseObject.posts[i].moreLink + '"><input type="button" id="readMore" value="Read More"/></a></li>';
+        } else {
+            blogContent += '<li><a href="#"><input type="button" id="readMore" value="Read More"/></a></li>';
+        }
+
+        blogContent += '</ul>';
+    }
+
+    var blogPosts = document.querySelector('article#blogposts');
+    blogPosts.innerHTML = blogContent;
 
 
-        // Events Content
+    // Events Content
+    if ('section#events') {
         var eventContent = '';
         eventContent += '<h3>Upcoming Events</h3>';
         eventContent += '<ul>';
@@ -56,10 +95,10 @@ var xhr = new XMLHttpRequest();
         eventContent += '</ul>';
         var events = document.querySelector('section#events');
         events.innerHTML = eventContent;
+    }
 
-
-        // New Hikers
-
+    // New Hikers
+    if ('section#hikers') {
         var newHikers = '';
         newHikers += '<h3>New Hikers</h3>';
         newHikers += '<ul>';
@@ -76,9 +115,9 @@ var xhr = new XMLHttpRequest();
         newHikers += '</ul>';
         var hikers = document.querySelector('section#hikers');
         hikers.innerHTML = newHikers;
-
-        // About Section
-
+    }
+    // About Section
+    if ('section#about') {
         var about = '';
         about += '<h3>About</h3>';
         about += '<p><strong>' + responseObject.about.title + '</strong> ' + responseObject.about.text + '</p>';
@@ -86,51 +125,16 @@ var xhr = new XMLHttpRequest();
 
         var aboutInfo = document.querySelector('section#about');
         aboutInfo.innerHTML = about;
+    }
 
 
+};
 
 
-
-// Destinations
-
-        var locationContent = '';
-        locationContent += '<h1>Destinations</h1>';
-
-        for (var i = 0; i < responseObject.locations.length; i++) {
-
-            locationContent += '<h2>' + responseObject.locations[i].title + '</h2>';
-            locationContent += '<p><strong>' + responseObject.locations[i].city + ', ' + responseObject.locations[i].state + '</p></strong>';
-            locationContent += '<p>' + responseObject.locations[i].text + '</p>';
-        }
-
-        var locationHeader = document.querySelector('section#destinations');
-        locationHeader.innerHTML = locationContent;
-    };
-
-
-    xhr.open('GET', 'https://jbonline.bitbucket.io/data/hikersguide.json', true);
-    xhr.send(null);
-
+xhr.open('GET', 'https://jbonline.bitbucket.io/data/hikersguide.json', true);
+xhr.send(null);
 
 
 // Upcoming Events Page
 /*
-    var upcomingContent ='';
-    upcomingContent += '<h1>Events</h1>';
-    upcomingContent += '<table>\n' +
-        '<tr>\n' +
-        '<th>DATE</th>\n' +
-        '<th>INFORMATION</th>\n' +
-        '</tr>\n' +
-
-    for(i = 0; i < responseObject.events.length; i++){
-        upcomingContent += '<tr>';
-        upcomingContent += '<td>' + responseObject.events.date + '</td>'
-        upcomingContent += '<td><strong>' + responseObject.events.title +'</strong> <p>' + responseObject.events.text + '</p></td>';
-        upcomingContent += '</tr>';
-    }
-
-    upcomingContent += '</table>';
-
-    var upcomingEvents = document.querySelector('section#upcomingEvents');
-    upcomingEvents.innerHTML = upcomingContent;*/
+    */
