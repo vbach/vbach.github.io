@@ -9,11 +9,29 @@ xhr.onload = function () {
     if (xhr.status === 200) {
         var responseObject = JSON.parse(xhr.responseText);
 
+        var i;
+
+        // Gallery Content
+
+        var galleryContent = '';
+
+        for(i = 0; i < responseObject.locations.length; i++){
+
+            galleryContent += '<h2>' + responseObject.locations[i].city +', ' +responseObject.locations[i].state + '</h2>';
+            galleryContent += '<p><strong>' + responseObject.locations[i].title + '</strong>';
+        }
+
+        var gallery = document.querySelector('section#gallerySlide');
+
+        if(gallery !== null){
+            gallery.innerHTML = galleryContent;
+        }
+
         // Blog Content
 
         var blogContent = '';
 
-        for (var i = 0; i < responseObject.posts.length; i++) {
+        for (i = 0; i < responseObject.posts.length; i++) {
 
             blogContent += '<ul>';
             blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '" width="200px" height="200px" /></li>';
@@ -46,7 +64,7 @@ xhr.onload = function () {
         eventContent += '<h3>Upcoming Events</h3>';
         eventContent += '<ul>';
 
-        for (var i = 0; i < responseObject.events.length; i++) {
+        for (i = 0; i < responseObject.events.length; i++) {
 
             eventContent += '<li><strong>' + responseObject.events[i].date + '</strong>';
             eventContent += '<ul>';
