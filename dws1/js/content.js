@@ -68,10 +68,10 @@ xhr.onload = function () {
 
 
         var eventContent = '';
-        eventContent += '<h3>Upcoming Events</h3>';
+        eventContent += '<h2>Upcoming Events</h2>';
         eventContent += '<ul>';
 
-        for (i = 0; i < responseObject.events.length; i++) {
+        for (i = 0; i <=2; i++) {
             var month = responseObject.events[i].date.slice(5, 8).split('-').join("");
             var day = responseObject.events[i].date.slice(8, 10).split('-').join("");
             eventContent += '<li class="dateBlock">' + month + '</br><span class="day">' + day + '</span>';
@@ -91,7 +91,7 @@ xhr.onload = function () {
         // New Hikers
 
         var newHikers = '';
-        newHikers += '<h3>New Hikers</h3>';
+        newHikers += '<h2>New Hikers</h2>';
 
 
         for (i = 0; i < responseObject.hikers.length; i++) {
@@ -112,7 +112,7 @@ xhr.onload = function () {
         // About Section
 
         var about = '';
-        about += '<h3>About</h3>';
+        about += '<h2>About</h2>';
         about += '<p><strong>' + responseObject.about.title + '</strong> ' + responseObject.about.text + '</p>';
         about += '<p>' + responseObject.about.copyright + '</p>';
 
@@ -124,13 +124,17 @@ xhr.onload = function () {
 
         // destinations.html
         var locationContent = '';
-        locationContent += '<h1>Destinations</h1>';
+        locationContent += '<h2>Destinations</h2>';
 
         for (i = 0; i < responseObject.locations.length; i++) {
-
-            locationContent += '<h3>' + responseObject.locations[i].title + '</h3>';
-            locationContent += '<p><strong>' + responseObject.locations[i].city + ', ' + responseObject.locations[i].state + '</p></strong>';
-            locationContent += '<p>' + responseObject.locations[i].text + '</p>';
+            locationContent += '<article>';
+            locationContent += '<ul>';
+            locationContent += '<li><img src="https://images.unsplash.com/photo-1533557603879-ebdd7a92e4e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6d08c991169da5df017efdbedb195909&auto=format&fit=crop&w=2250&q=80"/></li>'
+            locationContent += '<li><h3>' + responseObject.locations[i].title + '</h3></li>';
+            locationContent += '<li><p><strong>' + responseObject.locations[i].city + ', ' + responseObject.locations[i].state + '</p></strong></li>';
+            locationContent += '<li><p>' + responseObject.locations[i].text + '</p></li>';
+            locationContent += '</ul>';
+            locationContent += '</article>';
         }
 
         var destinations = document.querySelector('section#destinations');
@@ -150,8 +154,13 @@ xhr.onload = function () {
                 '</tr>\n';
 
             for (i = 0; i < responseObject.events.length; i++) {
+
+                var month = responseObject.events[i].date.slice(5, 8).split('-').join("");
+                var day = responseObject.events[i].date.slice(8, 10).split('-').join("");
+                eventContent += '<li class="dateBlock">' + month + '</br><span class="day">' + day + '</span>';
+
                 upcomingContent += '<tr>';
-                upcomingContent += '<td>' + responseObject.events[i].date + '</td>';
+                upcomingContent += '<td class="dateBlock">'+ month + '</br><span class="day">' + day + '</span></td>';
                 upcomingContent += '<td><strong>' + responseObject.events[i].title + '</strong> <p>' + responseObject.events[i].text + '</p></td>';
                 upcomingContent += '</tr>';
             }

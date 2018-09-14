@@ -12,6 +12,7 @@ body {
     background: #222222 url("../images/hikers1001.jpg") no-repeat;
     background-size: 100% 600px;
 }
+
 #wrapper {
     margin: 0 auto;
     width: 100%;
@@ -19,54 +20,67 @@ body {
 
 .container {
     width: 75%;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
+.subContent {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #111111;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
 main {
-    margin: auto;
-    width: 75%;
+    margin: 0 auto;
+    width: 100%;
 }
 
 header, body > section {
     display: block;
     margin: 0 auto;
-    width: 75%;
+    width: 100%;
     padding-top: 50px;
 }
 
 #logo {
+    position: relative;
     float: left;
 }
 
 footer {
+    display: inline-block;
     width: 100%;
     background-color: #000000;
-    margin-top: 20px;
 }
-
-.subContent {
-    width: calc(75%/3);
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: #111111;
-}
-
 
 /***** Main Styles *****/
 
-
-h1, h2 {
+h1 {
     font-family: "Program";
     font-style: normal;
     font-weight: 900;
     font-size: 35px;
     color: #EEEEEE;
+    text-transform: uppercase;
 }
+
+h2 {
+    font-family: "Program";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    color: #EEEEEE;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #888888;
+    margin-bottom: 10px;
+}
+
 h3 {
     font-family: "Georgia";
     font-style: normal;
@@ -77,6 +91,7 @@ h3 {
     border-bottom: 1px solid #888888;
     margin-bottom: 10px;
 }
+
 h4 {
     font-family: "Program";
     font-style: normal;
@@ -84,6 +99,7 @@ h4 {
     font-size: 18px;
     color: #aaaaaa;
 }
+
 h5, h6 {
     font-family: "Program";
     font-style: normal;
@@ -91,27 +107,39 @@ h5, h6 {
     font-size: 14px;
     color: #aaaaaa;
 }
+
 ul {
     list-style-type: none;
     padding-left: 0px;
 }
+
 a {
     color: #1ABC9C;
     text-decoration: underline;
     font-weight: bold;
 }
+
 .loginIcon {
     padding-right: 5px;
     padding-left: 30px;
 }
+
 #socialMedia a {
     opacity: 0.5;
     padding: 5px;
 }
+
 #socialMedia a:hover {
     opacity: 1.0;
     padding: 5px;
 }
+
+footer a, a:active, a:visited, a:hover {
+    color: #1ABC9C;
+    font-weight: 400;
+    text-decoration: none;
+}
+
 /* All Buttons */
 
 .button {
@@ -125,6 +153,7 @@ a {
     font-weight: bold;
     color: #EEEEEE;
 }
+
 .moreAdventures {
     background-color: #222222;
     border: #888888 solid 3px;
@@ -135,51 +164,57 @@ a {
     margin: 0px auto 0px auto;
     display: block;
 }
+
 .formButtons {
     margin-left: auto;
     margin-right: auto;
 }
+
 /***** Navigation *****/
 
 nav {
     float: right;
-    display: inline-block;
 }
+
 nav::after {
     content: "";
     display: block;
     clear: both;
 }
+
 nav ul li {
     display: inline-block;
     padding: 5px;
+    vertical-align: middle;
 }
-#copyright ul li {
-    display: inline-block;
-    padding: 5px;
-}
+
 nav li a.current {
-    color: #EEEEEE;
-    font-weight: 700;
-    opacity: 1.0;
-}
-nav a, a:visited {
-    color: #EEEEEE;
-    text-decoration: none;
+    color: #111111;
     font-weight: 700;
     opacity: 0.75;
 }
-nav a:hover, a:active {
-    opacity: 1.0;
+
+nav a, a:visited {
+    color: #111111;
+    text-decoration: none;
+    font-weight: 700;
+    opacity: 0.50;
 }
+
+nav a:hover, a:active {
+    font-weight: 700;
+    opacity: 0.75;
+}
+
 /* Gallery */
 
 #gallery {
     display: inline-block;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     float: none;
 }
+
 #gallery h2 {
     border-top: 1px solid #888888;
     border-bottom: 1px solid #888888;
@@ -191,12 +226,12 @@ nav a:hover, a:active {
     display: inline-block;
     float: right;
     text-align: left;
-    margin: 0 50px auto;
+    margin: 0 70px auto;
     width: 40%;
     padding: 25px;
     background-color: #222222;
     border-right: 5px solid #16A085;
-    clear: right;
+    clear: both;
 }
 
 .next {
@@ -205,7 +240,9 @@ nav a:hover, a:active {
     font-size: 35px;
     color: #EEEEEE;
     margin-top: 70px;
+    margin-bottom: 5px;
 }
+
 .previous {
     display: inline-block;
     float: left;
@@ -215,29 +252,28 @@ nav a:hover, a:active {
 }
 
 .dot {
+    display: inline-block;
     float: right;
     background-color: #888888;
     width: 8px;
     height: 8px;
     margin-bottom: 4px;
-    border-radius: 50%;
     margin-right: 12px;
+    border-radius: 50%;
+    clear: right;
 }
+
 .dotCurrent {
     float: right;
     background-color: #EEEEEE;
     width: 8px;
     height: 8px;
     margin-bottom: 4px;
-    border-radius: 50%;
     margin-right: 12px;
+    border-radius: 50%;
+    clear: right;
 }
 
-.next::after, .previous::after, .dot::after, .dotCurrent::after {
-    content: "";
-    display: block;
-    clear: both;
-}
 /* Blog Posts */
 
 #blogPosts {
@@ -247,41 +283,121 @@ nav a:hover, a:active {
     width: 100%;
     text-align: center;
 }
+
 #blogPosts article {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    width: calc(75%/3);
+    width: calc(75% / 3);
     height: auto;
     background-color: #111111;
     margin: 15px;
     padding: 15px;
 }
+
 #blogPosts article li {
     padding-bottom: 3px;
 }
+
 #blogPosts article li:last-child {
     padding-top: 50px;
 }
+
 #blogPosts img {
     width: 100%;
     height: 200px;
     padding-bottom: 20px;
 }
+
 #signup {
     font-size: 24px;
 }
+
 #signup a {
     text-decoration: none;
 }
-/* Destinations */
 
-#destinations {
-    width: 100%;
-    display: block;
-    margin-top: 300px;
-    background-color: #222222;
+/****** Destinations ******/
+
+.destContainer {
+    display: inline-block;
+    poisition: relative;
+    margin-top: 75px;
     padding: 20px;
+    background-color: #222222;
+    text-align: left;
+    width: 100%;
+}
+
+#destinations h2 {
+    text-align: left;
+}
+
+#destinations img {
+    width: 100%;
+    height: 200px;
+    padding-bottom: 20px;
+}
+
+#destinations strong {
+    font-weight: 700;
+}
+
+#destinations li {
+    padding-bottom: 10px;
+}
+
+#destinations article {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    width: calc(75% / 3);
+    height: 400px;
+    background-color: #111111;
+    margin: 15px;
+    padding: 15px;
+}
+
+/****** Events ******/
+
+#eventMonths ul {
+    background-color:#EEEEEE;
+    border-radius: 25px;
+}
+#eventMonths ul li {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px;
+    font-size: 24px;
+    border-right: 1px solid #888888;
+}
+
+#eventMonths li:nth-of-type(4){
+    border: 0px;
+}
+
+#eventMonths li:hover {
+    background-color: #1ABC9C;
+    color: #EEEEEE;
+}
+
+
+/****** Connect ******/
+
+.connectContainer {
+    display: inline-block;
+    poisition: relative;
+    margin-top: 75px;
+    padding: 20px;
+    background-color: #222222;
+    text-align: left;
+    width: 100%;
+}
+
+#contactDetails {
+    display: inline-block;
+    float: left;
+    text-align: left;
 }
 
 /* Join the Adventure */
@@ -293,15 +409,18 @@ nav a:hover, a:active {
     padding: 150px;
     border-bottom: 25px #111111 solid;
 }
+
 #quote p {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 18px;
 }
+
 .author {
     font-weight: 400;
     padding-left: 10px;
 }
+
 .arrow-down {
     position: relative;
     margin: 0px auto 20px auto;
@@ -313,8 +432,8 @@ nav a:hover, a:active {
     width: 0px;
     height: 0px;
 }
-/* Footer */
 
+/* Footer */
 
 #events {
     display: inline-block;
@@ -323,8 +442,9 @@ nav a:hover, a:active {
     width: 26.5%;
     padding-top: 25px;
     text-align: left;
-    overflow: hidden;
+    clear: both;
 }
+
 .dateBlock {
     display: inline-block;
     text-align: center;
@@ -335,6 +455,7 @@ nav a:hover, a:active {
     margin: 0px;
     padding: 0px;
 }
+
 .day {
     text-align: center;
     font-size: 35px;
@@ -342,6 +463,7 @@ nav a:hover, a:active {
     font-family: "Program";
     font-weight: 900;
 }
+
 .month {
     text-align: center;
     font-size: 14px;
@@ -349,41 +471,42 @@ nav a:hover, a:active {
     font-family: "Program";
     font-weight: 900;
 }
+
 #events ul li {
     display: inline-block;
     vertical-align: top;
     margin-bottom: 5px;
     margin-right: 10px;
 }
+
 #hikers {
     display: inline-block;
     margin: 0 100px auto;
     width: 24.25%;
     padding-top: 25px;
     text-align: left;
+    clear: both;
 }
+
 #hikers ul li {
     display: inline-block;
     vertical-align: top;
     padding-right: 10px;
     margin-bottom: 10px;
 }
+
 #about {
     display: inline-block;
     width: 24.25%;
     vertical-align: top;
     padding-top: 25px;
     text-align: left;
+    clear: both;
 }
+
 #hikers img {
     width: 50px;
     height: 50px;
-}
-
-#events::after, #about::after, #hikers::after {
-    content:"";
-    display: block;
-    clear: both;
 }
 
 #socialMedia {
@@ -392,6 +515,7 @@ nav a:hover, a:active {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 #copyright {
     display: inline-block;
     float: left;
@@ -399,6 +523,12 @@ nav a:hover, a:active {
     margin-bottom: 20px;
     clear: both;
 }
+
+#copyright ul li {
+    display: inline-block;
+    padding: 5px;
+}
+
 /* Sign Up */
 
 #signup {
@@ -410,91 +540,9 @@ nav a:hover, a:active {
     vertical-align: middle;
     text-align: center;
 }
+
 /***** Form *****/
 
 label {
     font-weight: 600;
-}
-/* Login & Sign Up Form */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    padding-top: 60px;
-    text-align: center;
-}
-/* Modal Content/Box */
-
-.modal-content {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    border: 1px solid #888;
-    border-radius: 50px;
-    width: 30%;
-    font-family: "Program", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #888888;
-    background-color: #EEEEEE;
-}
-.formInput {
-    width: 200px;
-    height: 16px;
-}
-.modal h2 {
-    text-align: center;
-    color: #1ABC9C;
-    text-transform: uppercase;
-}
-.modal-form p {
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-.modal-form {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-}
-.modal-form fieldset {
-    border: 0px;
-    padding: 0px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: left;
-    vertical-align: middle;
-}
-.modal input[type=text], input[type=password], input[type=email] {
-    width: 200px;
-    height: 20px;
-    border: 1px solid #1ABC9C;
-    border-radius: 5px;
-    margin-bottom: 8px;
-}
-#socialMediaLogin {
-    text-align: center;
-    margin: 5px 0px 5px 0px;
-}
-/* The Close Button */
-
-.close {
-    position: absolute;
-    color: #888888;
-    right: 0px;
-    top: 0px;
-    font-size: 35px;
-    font-weight: bold;
-}
-/* Close button on hover */
-
-.close:hover, .close:focus {
-    color: #ff0000;
-    cursor: pointer;
 }

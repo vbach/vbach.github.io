@@ -3,13 +3,16 @@
 <head>
     <meta charset="utf-8"/>
     <title>Hiker's Guide</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://use.typekit.net/mbr2fml.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="js/content.js"></script>
 </head>
 <body>
 <div id="wrapper">
-    <header id="header">
+    <header>
         <!-- Logo -->
         <div class="container">
             <section id="logo">
@@ -25,226 +28,136 @@
                     <li>|</li>
                     <li><a href="events.html">EVENTS</a></li>
                     <li>|</li>
-                    <li><a href="connect.html">CONNECT</a></li>
+                    <li><a href="connect.html" class="current">CONNECT</a></li>
                     <li><img src="images/user.png" alt="User Login or Sign Up" title="User Login or Sign Up"
-                             class="loginIcon"/> <a
-                            href="#" onclick="document.getElementById('login').style.display='block'">LOGIN</a></li>
+                             class="loginIcon"/></li>
+                    <li><a href="#" class="current" onclick="document.getElementById('login').style.display='block'">LOGIN</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
-    <!-- Modal Login Form -->
-    <div id="login" class="modal">
-        <!-- Close Form -->
-
-        <div class="modal-content">
-            <!-- The form -->
-
-            <div class="container">
-                <span onclick="document.getElementById('login').style.display='none'" class="close">&times;</span>
-
-                <h2>Login</h2>
-                <p id="socialMediaLogin">Facebook | Twitter | Google Plus</p>
-                <form action="/login" method="post" class="modal-form">
-                    <fieldset>
-                        <p><label for="uname">Username: </label></p>
-                        <input type="text"
-                               placeholder="Username is the email you signed up with."
-                               class="formInput" name="uname"
-                               id="uname"
-                               required="required"></p>
-                        <p><label for="pwd">Password:</label></p>
-                        <input type="password"
-                               placeholder="Must have at least 8 characters."
-                               class="formInput" name="pwd" id="pwd"
-                               required="required"></p>
-                    </fieldset>
-                    <p><label for="remember">Remember me</label>
-                        <input type="checkbox" checked="checked" name="remember" id="remember"> | Forgot password?</p>
-                    <p class="formButtons">
-                        <button type="submit" class="button">LOGIN</button>
-                        OR
-                        <button type="button" class="button" onclick="document.getElementById('signUpForm').style.display='block';
-                        document.getElementById('login').style.display='none'">SIGN
-                            UP
-                        </button>
-                    </p>
-
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal SignUp Form -->
-    <div id="signUpForm" class="modal">
-        <div class="modal-content">
-
-            <div class="container">
-                <span onclick="document.getElementById('signUpForm').style.display='none'" class="close">&times;</span>
-                <h2>SIGN UP</h2>
-                <p>Facebook | Twitter | Google Plus</p>
-                <form action="/signup" method="post" class="modal-form">
-                    <fieldset>
-                        <p><label for="fname">First Name</label></p>
-                        <input type="text" name="fname" id="fname" required="required">
-
-                        <p><label for="lname">Last Name</label></p>
-                        <input type="text" name="lname" id="lname" required="required">
-
-                        <p><label for="email">E-mail</label></p>
-                        <input type="email" name="email" id="email" required="required">
-
-                        <p><label for="pass">Password</label></p>
-                        <input type="password" name="pass" id="pass" required="required"><br/>
-                        <small>Password must consist of at least 8 characters or numbers.</small>
-
-
-                        <p><label for="pwd">Confirm Password</label></p>
-                        <input type="password" name="cpwd" id="cpwd" required="required">
-
-                    </fieldset>
-
-                    <p>
-                        <button type="submit" class="button">SIGN UP</button>
-                        OR
-                        <button type="button" class="button" onclick="document.getElementById('signUpForm').style.display='none';
-                        document.getElementById('login').style.display='block'">LOGIN
-                        </button>
-                    </p>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-
     <main>
-        <!-- Contact Information -->
-        <section id="contactDetails">
-            <h2>CONTACT DETAILS</h2>
-            <h3>ADDRESS</h3>
-            <address>
-                Hiker's Guide, Inc.<br/>
-                7654 Summerset Lane<br/>
-                Los Angeles, CA 12345<br/>
-            </address>
+        <div class="connectContainer">
+            <div class="container">
+                <!-- Contact Information -->
+                <section id="contactDetails">
+                    <h2>CONTACT DETAILS</h2>
+                    <h3>ADDRESS</h3>
+                    <address>
+                        Hiker's Guide, Inc.<br/>
+                        7654 Summerset Lane<br/>
+                        Los Angeles, CA 12345<br/>
+                    </address>
 
-            <h3>PHONE</h3>
-            Monday - Friday 9AM to 5PM PST<br/>
-            1-800-123-4567<br/>
+                    <h3>PHONE</h3>
+                    Monday - Friday 9AM to 5PM PST<br/>
+                    1-800-123-4567<br/>
 
-            <h3>CONNECT WITH US</h3>
-            FaceBook | Twitter | Youtube | Instagram | GooglePlus
+                    <h3>CONNECT WITH US</h3>
+                    FaceBook | Twitter | Youtube | Instagram | GooglePlus
 
-        </section>
-
-        <!-- Contact Form -->
-        <section id="contactForm">
-            <h2>SEND US A MESSAGE</h2>
-            <form action="/message" method="post">
-
-                <fieldset>
-                    <p><label for="name">First & Last Name</label></p>
-                    <input type="text" placeholder="First & Last Name" name="name" id="name" required="required">
-                    <p><label for="phone">Phone</label></p>
-                    <input type="text" placeholder="Phone" name="phone" id="phone">
-                    <p><label for="sender_email">E-mail</label></p>
-                    <input type="text" placeholder="E-mail" name="email" id="sender_email" required="required">
-                    <p><label for="message">Message</label></p>
-                    <textarea name="message" id="message" required="required">How can we help you?</textarea>
-                </fieldset>
-
-                <p>
-                    <button type="submit">SEND</button>
-                </p>
-
-            </form>
-        </section>
-    </main>
-        <footer>
-
-            <footer>
-
-                <!-- Quote -->
-
-
-                <!-- Signup Slogan -->
-                <section id="signup">
-                    <p>The biggest adventure of your life is right around the corner. <strong><a href="#"
-                                                                                                 onclick="document.getElementById('signUpForm').style.display='block'">Sign
-                        up
-                        Now!</a></strong> <img src="images/arrow.png" alt="right arrow"></p>
                 </section>
 
-                <div class="container">
-                    <!-- Upcoming Events -->
-                    <section id="events">
-                        <h3>Upcoming Events</h3>
+                <!-- Contact Form -->
+                <section id="contactForm">
+
+                    <h2>SEND US A MESSAGE</h2>
+                    <form action="/message" method="post">
+
+                        <fieldset>
+                            <p><label for="name">First & Last Name</label></p>
+                            <input type="text" placeholder="First & Last Name" name="name" id="name"
+                                   required="required">
+                            <p><label for="phone">Phone</label></p>
+                            <input type="text" placeholder="Phone" name="phone" id="phone">
+                            <p><label for="sender_email">E-mail</label></p>
+                            <input type="text" placeholder="E-mail" name="email" id="sender_email" required="required">
+                            <p><label for="message">Message</label></p>
+                            <textarea name="message" id="message" required="required">How can we help you?</textarea>
+                        </fieldset>
+
+                        <p>
+                            <button type="submit">SEND</button>
+                        </p>
+
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <div class="subContent">
+
+        <div class="container">
+            <!-- Upcoming Events -->
+            <section id="events">
+                <h3>Upcoming Events</h3>
+                <ul>
+                    <li>Nov 14
                         <ul>
-                            <li>Nov 14
-                                <ul>
-                                    <li><strong>Consectetur adipiscing elit</strong></li>
-                                    <li>Cras ut orci sit amet quam vehicula feugiat.</li>
-                                </ul>
+                            <li><strong>Consectetur adipiscing elit</strong></li>
+                            <li>Cras ut orci sit amet quam vehicula feugiat.</li>
                         </ul>
-                    </section>
+                </ul>
+            </section>
 
-                    <!-- Hikers -->
-                    <section id="hikers">
-                        <h3>New Hikers</h3>
+            <!-- Hikers -->
+            <section id="hikers">
+                <h3>New Hikers</h3>
+                <ul>
+                    <li>Image
                         <ul>
-                            <li>Image
-                                <ul>
-                                    <li><strong>Smith, John</strong></li>
-                                    <li>Orlando, FL</li>
-                                </ul>
-                            </li>
+                            <li><strong>Smith, John</strong></li>
+                            <li>Orlando, FL</li>
                         </ul>
-                    </section>
+                    </li>
+                </ul>
+            </section>
 
-                    <!-- About -->
-                    <section id="about">
-                        <h3>About</h3>
-                        <p><strong>Lorem ipsum dolor sit amet</strong><br/>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, lacus ut sollicitudin
-                            volutpat,
-                            metus ipsum mollis nulla, non semper mi diam in mauris.</p>
-                        <p>Maecenas eget ipsum commodo, scelerisque mi maximus, bibendum dolor. Duis interdum elementum
-                            tristique.
-                            Phasellus varius rutrum scelerisque. Cras eleifend, elit eu euismod elementum, erat augue convallis
-                            elit, luctus accumsan quam est at velit. Sed congue nisl in eleifend consequat. Quisque faucibus
-                            ante
-                            feugiat, imperdiet enim vel, fermentum ligula. Mauris nec ex posuere, sagittis lorem in, ornare
-                            nibh.
-                            Pellentesque quis urna eleifend diam aliquet imperdiet vitae eu metus.</p>
+            <!-- About -->
+            <section id="about">
+                <h3>About</h3>
+                <p><strong>Lorem ipsum dolor sit amet</strong><br/>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, lacus ut sollicitudin
+                    volutpat,
+                    metus ipsum mollis nulla, non semper mi diam in mauris.</p>
+                <p>Maecenas eget ipsum commodo, scelerisque mi maximus, bibendum dolor. Duis interdum elementum
+                    tristique.
+                    Phasellus varius rutrum scelerisque. Cras eleifend, elit eu euismod elementum, erat augue convallis
+                    elit, luctus accumsan quam est at velit. Sed congue nisl in eleifend consequat. Quisque faucibus
+                    ante
+                    feugiat, imperdiet enim vel, fermentum ligula. Mauris nec ex posuere, sagittis lorem in, ornare
+                    nibh.
+                    Pellentesque quis urna eleifend diam aliquet imperdiet vitae eu metus.</p>
 
-                    </section>
+            </section>
+        </div>
+    </div>
 
-                    <div style="clear:both"></div>
+    <footer class="footer">
+        <div class="container">
+            <section id="copyright">
+                <ul>
+                    <li>&copy; HIKER's GUIDE, INC</li>
+                    <li><a href="#">PRIVACY</a></li>
+                    <li><a href="#">TERMS</a></li>
+                    <li><a href="#">NEWSLETTER</a></li>
+                </ul>
+            </section>
 
-                    <section id="copyright">
-                        <ul>
-                            <li>&copy; HIKER's GUIDE, INC</li>
-                            <li>PRIVACY</li>
-                            <li>TERMS</li>
-                            <li>NEWSLETTER</li>
-                        </ul>
-                    </section>
+            <section id="socialMedia">
+                <a href="http://www.facebook.com"><img src="images/facebook.png" alt="Facebook" title="Facebook"/></a>
+                <a href="http://www.twitter.com"><img src="images/twitter.png" alt="Twitter" title="Twitter"/></a>
+                <a href="http://www.youtube.com"><img src="images/youtube.png" alt="YouTube" title="YouTube"/></a>
+                <a href="http://plus.google.com"><img src="images/google.png" alt="Google Plus"
+                                                      title="Google Plus"/></a>
+                <a href="http://www.instagram.com"><img src="images/instagram.png" alt="Instagram"
+                                                        title="Instagram"/></a>
+            </section>
+        </div>
 
-                    <section id="socialMedia">
-                        <a href="http://www.facebook.com"><img src="images/facebook.png" alt="Facebook" title="Facebook"/></a>
-                        <a href="http://www.twitter.com"><img src="images/twitter.png" alt="Twitter" title="Twitter"/></a>
-                        <a href="http://www.youtube.com"><img src="images/youtube.png" alt="YouTube" title="YouTube"/></a>
-                        <a href="http://plus.google.com"><img src="images/google.png" alt="Google Plus"
-                                                              title="Google Plus"/></a>
-                        <a href="http://www.instagram.com"><img src="images/instagram.png" alt="Instagram"
-                                                                title="Instagram"/></a>
-                    </section>
-                </div>
-            </footer>
+    </footer>
 </div>
 </body>
 </html>
