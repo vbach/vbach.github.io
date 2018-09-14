@@ -13,45 +13,51 @@ xhr.onload = function () {
 
         // Gallery Content
 
-        var galleryContent = '';
-
-        for(i = 0; i < responseObject.locations.length; i++){
-
-            galleryContent += '<h2>' + responseObject.locations[i].city +', ' +responseObject.locations[i].state + '</h2>';
-            galleryContent += '<p><strong>' + responseObject.locations[i].title + '</strong>';
-        }
-
-        var gallery = document.querySelector('section#gallerySlide');
-
-        if(gallery !== null){
-            gallery.innerHTML = galleryContent;
-        }
+        // var galleryContent = '';
+        //
+        // for(i = 0; i < responseObject.locations.length; i++){
+        //
+        //     galleryContent += '<h2>' + responseObject.locations[i].city +', ' +responseObject.locations[i].state + '</h2>';
+        //     galleryContent += '<p><strong>' + responseObject.locations[i].title + '</strong></p>';
+        // }
+        //
+        // var gallery = document.querySelector('section#gallerySlide');
+        //
+        // if(gallery !== null){
+        //     gallery.innerHTML = galleryContent;
+        // }
 
         // Blog Content
 
         var blogContent = '';
 
-        for (i = 0; i < responseObject.posts.length; i++) {
 
+        for (i = 0; i < responseObject.posts.length; i++) {
+            blogContent += '<article>';
             blogContent += '<ul>';
-            blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '" width="200px" height="200px" /></li>';
+            blogContent += '<li><img src="' + responseObject.posts[i].imageURL + '"/></li>';
             blogContent += '<li><h4>' + responseObject.posts[i].title + '</h4></li>';
 
-            if (responseObject.posts[i].subtitle) {
-                blogContent += '<li><h5>' + responseObject.posts[i].subtitle + '</h5>';
-            }
+            var textStr = responseObject.posts[i].text;
 
-            blogContent += '<li>' + responseObject.posts[i].text + '</li>';
+            if(textStr.length > 200){
+                textStr = textStr.substring(0,200);
+                blogContent += '<li>' + textStr + '...</li>';
+            } else {
+                blogContent += '<li>' + responseObject.posts[i].text + '</li>';
+            }
 
             if (responseObject.posts[i].moreLink) {
-                blogContent += '<li> <a href="' + responseObject.posts[i].moreLink + '"><input type="button" id="readMore" value="Read More"/></a></li>';
+                blogContent += '<li> <a href="' + responseObject.posts[i].moreLink + '"><input type="button" class="button" value="Read More"/></a></li>';
             } else {
-                blogContent += '<li><a href="#"><input type="button" id="readMore" value="Read More"/></a></li>';
+                blogContent += '<li><a href="#"><input type="button" class="button" value="Read More"/></a></li>';
             }
-
             blogContent += '</ul>';
+            blogContent += '</article>';
         }
-        var blogPosts = document.querySelector('article#blogposts');
+
+
+        var blogPosts = document.querySelector('section#blogPosts');
 
         if (blogPosts !== null) {
             blogPosts.innerHTML = blogContent;
@@ -60,17 +66,17 @@ xhr.onload = function () {
 
         // Events Content
 
+
         var eventContent = '';
         eventContent += '<h3>Upcoming Events</h3>';
         eventContent += '<ul>';
 
         for (i = 0; i < responseObject.events.length; i++) {
-
-            eventContent += '<li><strong>' + responseObject.events[i].date + '</strong>';
-            eventContent += '<ul>';
-            eventContent += '<li><strong>' + responseObject.events[i].title + '</strong></li>';
-            eventContent += '<li>' + responseObject.events[i].location + '</li>';
-            eventContent += '</ul>';
+            var month = responseObject.events[i].date.slice(5, 8).split('-').join("");
+            var day = responseObject.events[i].date.slice(8, 10).split('-').join("");
+            eventContent += '<li class="dateBlock">' + month + '</br><span class="day">' + day + '</span>';
+            eventContent += '<li><strong>' + responseObject.events[i].title + '</strong></br>' +
+                responseObject.events[i].location + '</li>';
             eventContent += '</li>';
         }
 
@@ -81,22 +87,22 @@ xhr.onload = function () {
             events.innerHTML = eventContent;
         }
 
+
         // New Hikers
 
         var newHikers = '';
         newHikers += '<h3>New Hikers</h3>';
-        newHikers += '<ul>';
+
 
         for (i = 0; i < responseObject.hikers.length; i++) {
-
-            newHikers += '<li><img src="' + responseObject.hikers[i].imageURL + '" width="200px" height="200px"/></li>';
             newHikers += '<ul>';
-            newHikers += '<li><strong>' + responseObject.hikers[i].lastname + ', ' + responseObject.hikers[i].firstname + '</strong></li>';
-            newHikers += '<li>' + responseObject.hikers[i].city + ', ' + responseObject.hikers[i].state + '</li>';
+            newHikers += '<li><img src="' + responseObject.hikers[i].imageURL + '" width="200px" height="200px"/></li>';
+            newHikers += '<li><strong>' + responseObject.hikers[i].lastname + ', ' + responseObject.hikers[i].firstname + '</strong>' +
+                '</br>' + responseObject.hikers[i].city + ', ' + responseObject.hikers[i].state + '</li>';
             newHikers += '</ul>';
         }
 
-        newHikers += '</ul>';
+
         var hikers = document.querySelector('section#hikers');
 
         if (hikers !== null) {

@@ -4,93 +4,122 @@
     <meta charset="utf-8"/>
     <title>Hiker's Guide</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mbr2fml.css">
+    <script src="js/content.js"></script>
 </head>
 <body>
 <div id="wrapper">
-    <header>
-        <section id="gallery">
-            <!-- Logo -->
-            <h1>Hiker's Guide Logo</h1>
+    <header id="header">
+        <!-- Logo -->
+        <div class="container">
+            <section id="logo">
+                <img src="images/hikersGuide.png" alt="Hiker's Guide, INC" title="Hiker's Guide, INC"/>
+            </section>
 
             <!-- Navigation -->
             <nav>
                 <ul>
                     <li><strong><a href="index.html">HOME</a></strong></li>
+                    <li>|</li>
                     <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li>|</li>
                     <li><a href="events.html">EVENTS</a></li>
+                    <li>|</li>
                     <li><a href="connect.html">CONNECT</a></li>
-                    <li><!-- Icon --> <a href="#">LOGIN</a></li>
+                    <li><img src="images/user.png" alt="User Login or Sign Up" title="User Login or Sign Up"
+                             class="loginIcon"/> <a
+                            href="#" onclick="document.getElementById('login').style.display='block'">LOGIN</a></li>
                 </ul>
             </nav>
-        </section>
-
-        <section id="gallerySlide">
-            <h2>Lorem ipsum </h2>
-            <p><strong>ROCHESTER, NEWYORK</strong></p>
-        </section>
-
+        </div>
     </header>
 
+
     <!-- Modal Login Form -->
-    <div id="login">
-        <h3>Login</h3>
-        <p>Facebook | Twitter | Google Plus</p>
-        <p>OR</p>
-        <form action="/login" method="post">
-            <fieldset>
-                <p><label for="uname">Username</label></p>
-                <input type="text" placeholder="Username is the email you signed up with." name="uname" id="uname" required="required">
-                <p><label for="pwd">Password</label></p>
-                <input type="password" placeholder="Must have at least 8 characters." name="pwd" id="pwd" required="required">
-            </fieldset>
+    <div id="login" class="modal">
+        <!-- Close Form -->
 
-            <p><button type="submit">LOGIN</button></p>
+        <div class="modal-content">
+            <!-- The form -->
 
-            OR<br/>
+            <div class="container">
+                <span onclick="document.getElementById('login').style.display='none'" class="close">&times;</span>
 
-            <p><button type="button">SIGN UP</button></p>
+                <h2>Login</h2>
+                <p id="socialMediaLogin">Facebook | Twitter | Google Plus</p>
+                <form action="/login" method="post" class="modal-form">
+                    <fieldset>
+                        <p><label for="uname">Username: </label></p>
+                        <input type="text"
+                               placeholder="Username is the email you signed up with."
+                               class="formInput" name="uname"
+                               id="uname"
+                               required="required"></p>
+                        <p><label for="pwd">Password:</label></p>
+                        <input type="password"
+                               placeholder="Must have at least 8 characters."
+                               class="formInput" name="pwd" id="pwd"
+                               required="required"></p>
+                    </fieldset>
+                    <p><label for="remember">Remember me</label>
+                        <input type="checkbox" checked="checked" name="remember" id="remember"> | Forgot password?</p>
+                    <p class="formButtons">
+                        <button type="submit" class="button">LOGIN</button>
+                        OR
+                        <button type="button" class="button" onclick="document.getElementById('signUpForm').style.display='block';
+                        document.getElementById('login').style.display='none'">SIGN
+                            UP
+                        </button>
+                    </p>
 
 
-            <label for="remember">Remember me</label>
-            <input type="checkbox" checked="checked" name="remember" id="remember"> | Forgot password?
-
-        </form>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Modal SignUp Form -->
-    <div id="signupform">
-        <h3>SIGN UP</h3>
-        <p>Facebook | Twitter | Google Plus</p>
-        <p>OR</p>
-        <form action="/signup" method="post">
-            <fieldset>
-                <p><label for="fname">First Name</label></p>
-                <input type="text" name="fname" id="fname" required="required">
+    <div id="signUpForm" class="modal">
+        <div class="modal-content">
 
-                <p><label for="lname">Last Name</label></p>
-                <input type="text" name="lname" id="lname" required="required">
+            <div class="container">
+                <span onclick="document.getElementById('signUpForm').style.display='none'" class="close">&times;</span>
+                <h2>SIGN UP</h2>
+                <p>Facebook | Twitter | Google Plus</p>
+                <form action="/signup" method="post" class="modal-form">
+                    <fieldset>
+                        <p><label for="fname">First Name</label></p>
+                        <input type="text" name="fname" id="fname" required="required">
 
-                <p><label for="email">E-mail</label></p>
-                <input type="email" name="email" id="email" required="required">
+                        <p><label for="lname">Last Name</label></p>
+                        <input type="text" name="lname" id="lname" required="required">
 
-                <p><label for="pass">Password</label></p>
-                <input type="password" name="pass" id="pass" required="required"><br/>
-                <small>Password must consist of at least 8 characters or numbers.</small>
+                        <p><label for="email">E-mail</label></p>
+                        <input type="email" name="email" id="email" required="required">
+
+                        <p><label for="pass">Password</label></p>
+                        <input type="password" name="pass" id="pass" required="required"><br/>
+                        <small>Password must consist of at least 8 characters or numbers.</small>
 
 
-                <p><label for="pwd">Confirm Password</label></p>
-                <input type="password" name="cpwd" id="cpwd" required="required">
+                        <p><label for="pwd">Confirm Password</label></p>
+                        <input type="password" name="cpwd" id="cpwd" required="required">
 
-            </fieldset>
+                    </fieldset>
 
-            <p><button type="submit">SIGN UP</button></p>
+                    <p>
+                        <button type="submit" class="button">SIGN UP</button>
+                        OR
+                        <button type="button" class="button" onclick="document.getElementById('signUpForm').style.display='none';
+                        document.getElementById('login').style.display='block'">LOGIN
+                        </button>
+                    </p>
 
-            OR<br/>
-
-            <p><button type="button">LOGIN</button></p>
-
-        </form>
+                </form>
+            </div>
+        </div>
     </div>
+
 
     <main>
         <!-- Contact Information -->
@@ -134,68 +163,88 @@
 
             </form>
         </section>
-
-        <!-- Upcoming Events -->
-        <section id="events">
-            <h3>Upcoming Events</h3>
-            <ul>
-                <li>Nov 14
-                    <ul>
-                        <li><strong>Consectetur adipiscing elit</strong></li>
-                        <li>Cras ut orci sit amet quam vehicula feugiat.</li>
-                    </ul>
-            </ul>
-        </section>
-
-        <!-- Hikers -->
-        <section id="hikers">
-            <h3>New Hikers</h3>
-            <ul>
-                <li>Image
-                    <ul>
-                        <li><strong>Smith, John</strong></li>
-                        <li>Orlando, FL</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <!-- About -->
-        <section id="about">
-            <h3>About</h3>
-            <p><strong>Lorem ipsum dolor sit amet</strong><br/>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, lacus ut sollicitudin volutpat,
-                metus ipsum mollis nulla, non semper mi diam in mauris.</p>
-            <p>Maecenas eget ipsum commodo, scelerisque mi maximus, bibendum dolor. Duis interdum elementum tristique.
-                Phasellus varius rutrum scelerisque. Cras eleifend, elit eu euismod elementum, erat augue convallis
-                elit, luctus accumsan quam est at velit. Sed congue nisl in eleifend consequat. Quisque faucibus ante
-                feugiat, imperdiet enim vel, fermentum ligula. Mauris nec ex posuere, sagittis lorem in, ornare nibh.
-                Pellentesque quis urna eleifend diam aliquet imperdiet vitae eu metus.</p>
-
-        </section>
     </main>
+        <footer>
 
-    <!-- Footer -->
-    <footer>
+            <footer>
 
-        <section id="copyright">
-            <ul>
-                <li>&copy; HIKER's GUIDE, INC</li>
-                <li>PRIVACY</li>
-                <li>TERMS</li>
-                <li>NEWSLETTER</li>
-            </ul>
-        </section>
+                <!-- Quote -->
 
-        <section id="socialmedia">
-            <a href="http://www.facebook.com">Facebook</a>
-            <a href="http://www.twitter.com">Twitter</a>
-            <a href="http://www.youtube.com">Youtube</a>
-            <a href="http://plus.google.com">Google Plus</a>
-            <a href="http://www.instagram.com">Instagram</a>
-        </section>
-    </footer>
+
+                <!-- Signup Slogan -->
+                <section id="signup">
+                    <p>The biggest adventure of your life is right around the corner. <strong><a href="#"
+                                                                                                 onclick="document.getElementById('signUpForm').style.display='block'">Sign
+                        up
+                        Now!</a></strong> <img src="images/arrow.png" alt="right arrow"></p>
+                </section>
+
+                <div class="container">
+                    <!-- Upcoming Events -->
+                    <section id="events">
+                        <h3>Upcoming Events</h3>
+                        <ul>
+                            <li>Nov 14
+                                <ul>
+                                    <li><strong>Consectetur adipiscing elit</strong></li>
+                                    <li>Cras ut orci sit amet quam vehicula feugiat.</li>
+                                </ul>
+                        </ul>
+                    </section>
+
+                    <!-- Hikers -->
+                    <section id="hikers">
+                        <h3>New Hikers</h3>
+                        <ul>
+                            <li>Image
+                                <ul>
+                                    <li><strong>Smith, John</strong></li>
+                                    <li>Orlando, FL</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- About -->
+                    <section id="about">
+                        <h3>About</h3>
+                        <p><strong>Lorem ipsum dolor sit amet</strong><br/>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, lacus ut sollicitudin
+                            volutpat,
+                            metus ipsum mollis nulla, non semper mi diam in mauris.</p>
+                        <p>Maecenas eget ipsum commodo, scelerisque mi maximus, bibendum dolor. Duis interdum elementum
+                            tristique.
+                            Phasellus varius rutrum scelerisque. Cras eleifend, elit eu euismod elementum, erat augue convallis
+                            elit, luctus accumsan quam est at velit. Sed congue nisl in eleifend consequat. Quisque faucibus
+                            ante
+                            feugiat, imperdiet enim vel, fermentum ligula. Mauris nec ex posuere, sagittis lorem in, ornare
+                            nibh.
+                            Pellentesque quis urna eleifend diam aliquet imperdiet vitae eu metus.</p>
+
+                    </section>
+
+                    <div style="clear:both"></div>
+
+                    <section id="copyright">
+                        <ul>
+                            <li>&copy; HIKER's GUIDE, INC</li>
+                            <li>PRIVACY</li>
+                            <li>TERMS</li>
+                            <li>NEWSLETTER</li>
+                        </ul>
+                    </section>
+
+                    <section id="socialMedia">
+                        <a href="http://www.facebook.com"><img src="images/facebook.png" alt="Facebook" title="Facebook"/></a>
+                        <a href="http://www.twitter.com"><img src="images/twitter.png" alt="Twitter" title="Twitter"/></a>
+                        <a href="http://www.youtube.com"><img src="images/youtube.png" alt="YouTube" title="YouTube"/></a>
+                        <a href="http://plus.google.com"><img src="images/google.png" alt="Google Plus"
+                                                              title="Google Plus"/></a>
+                        <a href="http://www.instagram.com"><img src="images/instagram.png" alt="Instagram"
+                                                                title="Instagram"/></a>
+                    </section>
+                </div>
+            </footer>
 </div>
 </body>
-<script src="js/content.js"></script>
 </html>
