@@ -3,13 +3,20 @@
  * https://jbonline.bitbucket.io/data/hikersguide.json
 */
 
-
 var xhr = new XMLHttpRequest();
 xhr.onload = function () {
     if (xhr.status === 200) {
         var responseObject = JSON.parse(xhr.responseText);
 
         var i;
+
+        // Convert Month Number to Month Name
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        function monthNumtoName(monthNum){
+            return months[monthNum - 1] || '';
+        }
+
 
         // Gallery Content
 
@@ -28,7 +35,8 @@ xhr.onload = function () {
         // }
 
         // Blog Content
-
+        var blogPosts = document.querySelector('section#blogPosts');
+        if (blogPosts !== null) {
         var blogContent = '';
 
 
@@ -55,41 +63,39 @@ xhr.onload = function () {
             blogContent += '</ul>';
             blogContent += '</article>';
         }
-
-
-        var blogPosts = document.querySelector('section#blogPosts');
-
-        if (blogPosts !== null) {
             blogPosts.innerHTML = blogContent;
         }
 
 
         // Events Content
+        var events = document.querySelector('section#events');
 
-
+        if (events !== null) {
         var eventContent = '';
         eventContent += '<h2>Upcoming Events</h2>';
         eventContent += '<ul>';
 
         for (i = 0; i <=2; i++) {
+
             var month = responseObject.events[i].date.slice(5, 8).split('-').join("");
+            var displayMonthName = monthNumtoName(month);
             var day = responseObject.events[i].date.slice(8, 10).split('-').join("");
-            eventContent += '<li class="dateBlock">' + month + '</br><span class="day">' + day + '</span>';
+            eventContent += '<li class="dateBlock"><span class="month">' + displayMonthName + '</br></span><span class="day">' + day + '</span>';
             eventContent += '<li><strong>' + responseObject.events[i].title + '</strong></br>' +
                 responseObject.events[i].location + '</li>';
             eventContent += '</li>';
         }
 
         eventContent += '</ul>';
-        var events = document.querySelector('section#events');
 
-        if (events !== null) {
             events.innerHTML = eventContent;
         }
 
 
         // New Hikers
+        var hikers = document.querySelector('section#hikers');
 
+        if (hikers !== null) {
         var newHikers = '';
         newHikers += '<h2>New Hikers</h2>';
 
@@ -101,28 +107,29 @@ xhr.onload = function () {
                 '</br>' + responseObject.hikers[i].city + ', ' + responseObject.hikers[i].state + '</li>';
             newHikers += '</ul>';
         }
-
-
-        var hikers = document.querySelector('section#hikers');
-
-        if (hikers !== null) {
             hikers.innerHTML = newHikers;
         }
 
         // About Section
+
+        var aboutInfo = document.querySelector('section#about');
+
+        if (aboutInfo !== null) {
 
         var about = '';
         about += '<h2>About</h2>';
         about += '<p><strong>' + responseObject.about.title + '</strong> ' + responseObject.about.text + '</p>';
         about += '<p>' + responseObject.about.copyright + '</p>';
 
-        var aboutInfo = document.querySelector('section#about');
 
-        if (aboutInfo !== null) {
             aboutInfo.innerHTML = about;
         }
 
         // destinations.html
+
+        var destinations = document.querySelector('section#destinations');
+
+        if (destinations !== null) {
         var locationContent = '';
         locationContent += '<h2>Destinations</h2>';
 
@@ -136,17 +143,14 @@ xhr.onload = function () {
             locationContent += '</ul>';
             locationContent += '</article>';
         }
-
-        var destinations = document.querySelector('section#destinations');
-
-        if (destinations !== null) {
             destinations.innerHTML = locationContent;
         }
 
         // events.html
-            var upcomingContent = '';
 
-            upcomingContent += '<h1>Events</h1>';
+        var upcomingEvents = document.querySelector('section#upcomingEvents');
+        if (upcomingEvents !== null) {
+            var upcomingContent = '';
             upcomingContent += '<table>\n' +
                 '<tr>\n' +
                 '<th>DATE</th>\n' +
@@ -156,20 +160,16 @@ xhr.onload = function () {
             for (i = 0; i < responseObject.events.length; i++) {
 
                 var month = responseObject.events[i].date.slice(5, 8).split('-').join("");
+                var displayMonthName = monthNumtoName(month);
                 var day = responseObject.events[i].date.slice(8, 10).split('-').join("");
-                eventContent += '<li class="dateBlock">' + month + '</br><span class="day">' + day + '</span>';
-
                 upcomingContent += '<tr>';
-                upcomingContent += '<td class="dateBlock">'+ month + '</br><span class="day">' + day + '</span></td>';
-                upcomingContent += '<td><strong>' + responseObject.events[i].title + '</strong> <p>' + responseObject.events[i].text + '</p></td>';
+                upcomingContent += '<td class="dateBlock"><span class="month">'+ displayMonthName + '</span></br><span class="day">' + day + '</span></td>';
+                upcomingContent += '<td class="eventDetails arrow_box"><h4>' + responseObject.events[i].title + '</h4> <details><summary>Details</summary><p>' + responseObject.events[i].text + '</details></td>';
                 upcomingContent += '</tr>';
             }
 
             upcomingContent += '</table>';
 
-            var upcomingEvents = document.querySelector('section#upcomingEvents');
-
-        if (upcomingEvents !== null) {
             upcomingEvents.innerHTML = upcomingContent;
         }
     }

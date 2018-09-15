@@ -79,6 +79,7 @@ h2 {
     padding-bottom: 2px;
     border-bottom: 1px solid #888888;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 h3 {
@@ -113,7 +114,7 @@ ul {
     padding-left: 0px;
 }
 
-a {
+#signup a, a:active, a:visited, a:hover {
     color: #1ABC9C;
     text-decoration: underline;
     font-weight: bold;
@@ -194,14 +195,15 @@ nav li a.current {
     opacity: 0.75;
 }
 
-nav a, a:visited {
+nav a, a:active, a:visited {
     color: #111111;
     text-decoration: none;
     font-weight: 700;
     opacity: 0.50;
 }
 
-nav a:hover, a:active {
+nav a:hover {
+    color: #111111;
     font-weight: 700;
     opacity: 0.75;
 }
@@ -363,6 +365,8 @@ nav a:hover, a:active {
 #eventMonths ul {
     background-color:#EEEEEE;
     border-radius: 25px;
+    width: 600px;
+    margin: 0 auto;
 }
 #eventMonths ul li {
     display: inline-block;
@@ -381,7 +385,91 @@ nav a:hover, a:active {
     color: #EEEEEE;
 }
 
+#upcomingEvents {
+    text-align: left;
+    padding: 25px;
+}
 
+#upcomingEvents th {
+    visibility: hidden;
+}
+
+#upcomingEvents td {
+    padding-bottom: 25px;
+}
+
+.eventDetails {
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+table {
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+table td:nth-of-type(1) {
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    padding: 25px ;
+}
+
+table tr td:nth-of-type(2) {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #888888;
+    border-left: 50px solid #1ABC9C;
+
+
+}
+
+details {
+    outline: none;
+    width: 300px;
+    margin: 5px 0 0 0;
+}
+
+details > summary {
+    outline: none;
+    font-weight: 700;
+}
+
+details > p {
+    border-radius: 10px;
+    color: #222222;
+    padding: 10px;
+    margin: 5px;
+    line-height: 150%;
+}
+
+.arrow_box {
+    position: relative;
+    background: #EEEEEE;
+    border: 1px solid #888888;
+}
+.arrow_box:after, .arrow_box:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow_box:after {
+    border-right-color: #EEEEEE;
+    border-width: 15px;
+    margin-top: -15px;
+}
+.arrow_box:before {
+    border-right: 16px #888888;
+    margin-top: -16px;
+}
 /****** Connect ******/
 
 .connectContainer {
@@ -416,6 +504,10 @@ nav a:hover, a:active {
     font-size: 18px;
 }
 
+#quote h2 {
+    border: 0px;
+}
+
 .author {
     font-weight: 400;
     padding-left: 10px;
@@ -446,7 +538,7 @@ nav a:hover, a:active {
 }
 
 .dateBlock {
-    display: inline-block;
+    position: relative;
     text-align: center;
     background-color: #EEEEEE;
     width: 50px;
@@ -469,7 +561,8 @@ nav a:hover, a:active {
     font-size: 14px;
     color: #aaaaaa;
     font-family: "Program";
-    font-weight: 900;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 #events ul li {
@@ -527,6 +620,10 @@ nav a:hover, a:active {
 #copyright ul li {
     display: inline-block;
     padding: 5px;
+}
+
+#copyright a, a:visited, a:active, a:hover {
+    color: #1ABC9C;
 }
 
 /* Sign Up */
