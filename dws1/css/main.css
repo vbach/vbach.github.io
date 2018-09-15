@@ -7,7 +7,7 @@ body {
     font-family: "Program";
     font-weight: 400;
     font-style: normal;
-    font-size: 14px;
+    font-size: 0.875em;
     color: #888888;
     background: #222222 url("../images/hikers1001.jpg") no-repeat;
     background-size: 100% 600px;
@@ -25,6 +25,21 @@ body {
     text-align: center;
 }
 
+header {
+    margin-top: 50px;
+}
+
+
+main {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#logo {
+    position: relative;
+    float: left;
+}
+
 .subContent {
     width: 100%;
     margin-left: auto;
@@ -35,27 +50,23 @@ body {
     overflow: auto;
 }
 
-main {
-    margin: 0 auto;
-    width: 100%;
-}
-
-header, body > section {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    padding-top: 50px;
-}
-
-#logo {
+.subPageContainer {
+    display: inline-block;
     position: relative;
-    float: left;
+    width: 100%;
+    margin: 100px 0 0 0;
+    padding: 50px 20px 0 20px;
+    text-align: left;
+    background-color: #222222;
+    border-top: 15px solid #1ABC9C;
+
 }
 
 footer {
     display: inline-block;
     width: 100%;
     background-color: #000000;
+    margin-bottom: 0;
 }
 
 /***** Main Styles *****/
@@ -64,7 +75,7 @@ h1 {
     font-family: "Program";
     font-style: normal;
     font-weight: 900;
-    font-size: 35px;
+    font-size: 2.500em;
     color: #EEEEEE;
     text-transform: uppercase;
 }
@@ -73,31 +84,35 @@ h2 {
     font-family: "Program";
     font-style: normal;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 2.500em;
     color: #EEEEEE;
     text-transform: uppercase;
     padding-bottom: 2px;
-    border-bottom: 1px solid #888888;
     margin-bottom: 10px;
     text-align: left;
+}
+
+.subContent h2 {
+    border-bottom: 1px solid #888888;
 }
 
 h3 {
     font-family: "Georgia";
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.714em;
     color: #CCCCCC;
-    padding-bottom: 2px;
+    padding: 10px 0 10px 0;
     border-bottom: 1px solid #888888;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 h4 {
     font-family: "Program";
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.286em;
     color: #aaaaaa;
 }
 
@@ -105,7 +120,7 @@ h5, h6 {
     font-family: "Program";
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 1.00em;
     color: #aaaaaa;
 }
 
@@ -121,19 +136,9 @@ ul {
 }
 
 .loginIcon {
-    padding-right: 5px;
-    padding-left: 30px;
+    padding: 0 5px 0 30px;
 }
 
-#socialMedia a {
-    opacity: 0.5;
-    padding: 5px;
-}
-
-#socialMedia a:hover {
-    opacity: 1.0;
-    padding: 5px;
-}
 
 footer a, a:active, a:visited, a:hover {
     color: #1ABC9C;
@@ -150,7 +155,7 @@ footer a, a:active, a:visited, a:hover {
     padding: 10px 20px;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
+    font-size: 1.00em;
     font-weight: bold;
     color: #EEEEEE;
 }
@@ -161,7 +166,7 @@ footer a, a:active, a:visited, a:hover {
     text-transform: uppercase;
     font-weight: bold;
     color: #888888;
-    padding: 5px;
+    padding: 15px;
     margin: 0px auto 0px auto;
     display: block;
 }
@@ -195,14 +200,13 @@ nav li a.current {
     opacity: 0.75;
 }
 
-nav a, a:active, a:visited {
+nav a:link, a:visited {
     color: #111111;
     text-decoration: none;
     font-weight: 700;
     opacity: 0.50;
 }
-
-nav a:hover {
+nav a:hover, nav a:active {
     color: #111111;
     font-weight: 700;
     opacity: 0.75;
@@ -239,7 +243,7 @@ nav a:hover {
 .next {
     display: inline-block;
     float: right;
-    font-size: 35px;
+    font-size: 2.500em;
     color: #EEEEEE;
     margin-top: 70px;
     margin-bottom: 5px;
@@ -248,7 +252,7 @@ nav a:hover {
 .previous {
     display: inline-block;
     float: left;
-    font-size: 35px;
+    font-size: 2.500em;
     margin-top: 70px;
     color: #EEEEEE;
 }
@@ -281,7 +285,7 @@ nav a:hover {
 #blogPosts {
     display: inline-block;
     position: relative;
-    margin: 100px auto;
+    margin: 100px 0px 25px 0px;
     width: 100%;
     text-align: center;
 }
@@ -312,27 +316,35 @@ nav a:hover {
 }
 
 #signup {
-    font-size: 24px;
+    display: inline-block;
+    font-size: 1.714em;
+}
+
+#signup img {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5px;
 }
 
 #signup a {
     text-decoration: none;
 }
 
-/****** Destinations ******/
-
-.destContainer {
-    display: inline-block;
-    poisition: relative;
-    margin-top: 75px;
-    padding: 20px;
-    background-color: #222222;
-    text-align: left;
-    width: 100%;
+/****** SubPage Additions ******/
+#subPageFoot {
+    display: block;
+    background: #222222 url("../images/climbers.png") bottom right no-repeat;
+    margin: 0px;
+    padding-top: 180px;
+    border-bottom: 25px #111111 solid;
 }
+
+
+/****** Destinations ******/
 
 #destinations h2 {
     text-align: left;
+    border: 0;
 }
 
 #destinations img {
@@ -353,49 +365,40 @@ nav a:hover {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    width: calc(75% / 3);
+    width: calc(100% / 3);
     height: 400px;
     background-color: #111111;
     margin: 15px;
     padding: 15px;
 }
 
+
+
 /****** Events ******/
 
 #eventMonths ul {
     background-color:#EEEEEE;
-    border-radius: 25px;
-    width: 600px;
+    width: 650px;
     margin: 0 auto;
+    border-radius: 15px 15px 0 0;
 }
-#eventMonths ul li {
+#eventMonths li {
     display: inline-block;
     vertical-align: middle;
+    font-size: 1.714em;
+}
+
+#eventMonths li:nth-of-type(odd){
     padding: 20px;
-    font-size: 24px;
-    border-right: 1px solid #888888;
 }
 
-#eventMonths li:nth-of-type(4){
-    border: 0px;
-}
-
-#eventMonths li:hover {
+#eventMonths li:hover:nth-of-type(odd) {
     background-color: #1ABC9C;
     color: #EEEEEE;
 }
 
 #upcomingEvents {
     text-align: left;
-    padding: 25px;
-}
-
-#upcomingEvents th {
-    visibility: hidden;
-}
-
-#upcomingEvents td {
-    padding-bottom: 25px;
 }
 
 .eventDetails {
@@ -404,15 +407,20 @@ nav a:hover {
 }
 
 table {
-    margin: 0 auto;
-    table-layout: fixed;
+    margin: -14px auto;
+    table-layout: auto;
     border-collapse: collapse;
+    border-spacing: 0;
+    width: 650px;
 }
 
+table th {
+    visibility: hidden;
+}
 
 table td:nth-of-type(1) {
     margin-right: 15px;
-    width: 50px;
+    width: 15%;
     height: 50px;
     padding: 25px ;
 }
@@ -422,8 +430,19 @@ table tr td:nth-of-type(2) {
     vertical-align: middle;
     border-bottom: 1px solid #888888;
     border-left: 50px solid #1ABC9C;
+}
 
+table tr td:last-child{
+    border-bottom: 0;
+    border-right: 0;
+}
 
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+table tr:last-child td:last-child{
+    border-bottom-right-radius: 15px;
 }
 
 details {
@@ -472,20 +491,22 @@ details > p {
 }
 /****** Connect ******/
 
-.connectContainer {
-    display: inline-block;
-    poisition: relative;
-    margin-top: 75px;
-    padding: 20px;
-    background-color: #222222;
-    text-align: left;
-    width: 100%;
-}
-
 #contactDetails {
     display: inline-block;
-    float: left;
     text-align: left;
+    line-height: 120%;
+    margin: 15px 50px 0 0;
+    vertical-align: top;
+}
+
+#contactForm {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 120%;
+    border-left: 4px solid #EEEEEE;
+    padding-left: 50px;
+    margin: 15px 0px 0 0;
 }
 
 /* Join the Adventure */
@@ -493,7 +514,7 @@ details > p {
 #quote {
     display: block;
     background: #1ABC9C url("../images/climbers.png") bottom right no-repeat;
-    margin: 0px;
+    margin: 0;
     padding: 150px;
     border-bottom: 25px #111111 solid;
 }
@@ -501,11 +522,14 @@ details > p {
 #quote p {
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 18px;
+    font-style: italic;
+    font-size: 1.286em;
+    margin: 0 0 25px 50px;
 }
 
 #quote h2 {
     border: 0px;
+    margin-left: 50px;
 }
 
 .author {
@@ -550,7 +574,7 @@ details > p {
 
 .day {
     text-align: center;
-    font-size: 35px;
+    font-size: 2.500em;
     color: #222222;
     font-family: "Program";
     font-weight: 900;
@@ -558,7 +582,6 @@ details > p {
 
 .month {
     text-align: center;
-    font-size: 14px;
     color: #aaaaaa;
     font-family: "Program";
     font-weight: 700;
@@ -602,12 +625,28 @@ details > p {
     height: 50px;
 }
 
-#socialMedia {
+.socialMedia {
     display: block;
     float: right;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.left {
+    float: left;
+    margin: 0;
+}
+
+.socialMedia a {
+    opacity: 0.5;
+    padding: 5px;
+}
+
+.socialMedia a:hover {
+    opacity: 1.0;
+    padding: 5px;
+}
+
 
 #copyright {
     display: inline-block;
@@ -622,7 +661,7 @@ details > p {
     padding: 5px;
 }
 
-#copyright a, a:visited, a:active, a:hover {
+a#copyright:link, a#copyright:visited, a#copyright:hover, a#copyright:active {
     color: #1ABC9C;
 }
 
@@ -641,5 +680,25 @@ details > p {
 /***** Form *****/
 
 label {
-    font-weight: 600;
+    font-weight: 700;
+}
+
+input[type = text] {
+    width: 200px;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #16A085;
+    border-radius: 5px;
+
+}
+
+textarea {
+    width: 350px;
+    height: 150px;
+    padding: 5px 10px;
+    margin: 8px 0 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #16A085;
+    border-radius: 5px;
 }
