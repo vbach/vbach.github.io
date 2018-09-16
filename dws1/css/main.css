@@ -4,7 +4,7 @@
 
 /***** Layout *****/
 body {
-    font-family: "Program";
+    font-family: "Program OT", "Open Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 0.875em;
@@ -381,12 +381,12 @@ nav a:hover, nav a:active {
     width: 650px;
     margin: 0 auto;
     border-radius: 15px 15px 0 0;
+    font-weight: 400;
 }
 #eventMonths li {
     display: inline-block;
     vertical-align: middle;
     font-size: 1.714em;
-    font-family: "Program OT", "Open Sans", sans-serif;
 }
 
 #eventMonths li:nth-of-type(odd){
@@ -414,6 +414,10 @@ table {
     width: 650px;
     background-color: #EEEEEE;
     empty-cells: hide;
+}
+
+table tr th {
+    visibility: hidden;
 }
 
 table td:nth-of-type(1) {
