@@ -224,7 +224,6 @@ nav a:hover, nav a:active {
 #gallery h2 {
     border-top: 1px solid #888888;
     border-bottom: 1px solid #888888;
-    border-padding: 50px;
     margin-bottom: 5px;
 }
 
@@ -366,7 +365,7 @@ nav a:hover, nav a:active {
     vertical-align: top;
     text-align: left;
     width: calc(100% / 3);
-    height: auto;
+    height: 425px;
     background-color: #111111;
     margin: 15px;
     padding: 15px;
@@ -378,10 +377,9 @@ nav a:hover, nav a:active {
 
 #eventMonths ul {
     background-color:#EEEEEE;
-    width: 650px;
+    width: 100%;
     margin: 0 auto;
     border-radius: 15px 15px 0 0;
-    font-weight: 400;
 }
 #eventMonths li {
     display: inline-block;
@@ -406,12 +404,16 @@ nav a:hover, nav a:active {
     vertical-align: top;
 }
 
+#upcomingEvents .month {
+    font-size: 35px;
+}
+
 table {
     table-layout: auto;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 0 auto;
-    width: 650px;
+    width: 100%;
     background-color: #EEEEEE;
     empty-cells: hide;
 }
@@ -424,7 +426,7 @@ table td:nth-of-type(1) {
     margin-right: 15px;
     width: 15%;
     height: 50px;
-    padding: 25px ;
+    padding: 50px ;
 }
 
 table tr td:nth-of-type(even) {
@@ -436,7 +438,7 @@ table tr td:nth-of-type(even) {
 
 details {
     outline: none;
-    width: 300px;
+    width: 500px;
     margin: 5px 0 0 0;
 }
 

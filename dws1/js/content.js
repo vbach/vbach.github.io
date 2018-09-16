@@ -163,7 +163,7 @@ xhr.onload = function () {
                 var displayMonthName = monthNumtoName(month);
                 var day = responseObject.events[i].date.slice(8, 10).split('-').join("");
                 upcomingContent += '<tr>';
-                upcomingContent += '<td class="dateBlock"><span class="month">'+ displayMonthName + '</span></br><span class="day">' + day + '</span></td>';
+                upcomingContent += '<td class="dateBlock"><span class="month">'+ displayMonthName + '</span>  <span class="day">' + day + '</span></td>';
                 upcomingContent += '<td class="eventDetails arrow_box"><h4>' + responseObject.events[i].title + '</h4> <details><summary>Details</summary><p>' + responseObject.events[i].text + '</details></td>';
                 upcomingContent += '</tr>';
             }
