@@ -36,7 +36,6 @@
                         <div class="formPopUp" id="login">
                             <div class="close" id="closeX">X</div>
                             <form action="/message" method="post" class="form">
-                                <p id="loginerror"></p>
                                 <fieldset>
                                     <p><label for="uname">UserName</label></p>
                                     <input type="text" name="uname" id="uname" required="required">
@@ -45,7 +44,7 @@
                                 </fieldset>
 
                                 <p>
-                                    <button type="submit" class="button" id="loginBtn">LOGIN</button>
+                                    <button class="button" id="loginBtn" disabled>LOGIN</button>
                                 </p>
 
                                 <p>Not a member? <a href="#" id="signUpLink">Sign up!</a></p>

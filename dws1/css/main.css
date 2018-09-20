@@ -654,6 +654,10 @@ details > p {
     padding: 5px;
 }
 
+#copyright a:visited {
+    color: #16A085;
+}
+
 
 
 /* Sign Up */
@@ -677,11 +681,6 @@ label {
 .invalid {
     box-shadow: 0 0 5px 1px red;
 }
-
-.validation-message {
-    color: red;
-}
-
 #error {
     display: none;
     text-align: center;
@@ -689,7 +688,8 @@ label {
     color: red;
     padding: 25px;
     background-color: #EEE;
-    border: 1px solid #16A085;
+    border: 4px solid #16A085;
+    margin-bottom: 5px;
 }
 
 #success {
