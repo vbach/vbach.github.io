@@ -29,7 +29,29 @@
                     <li><a href="connect.html">Connect</a></li>
                     <li><img src="images/user.png" alt="User Login or Sign Up" title="User Login or Sign Up"
                              class="loginIcon"/></li>
-                    <li><a href="#" class="current" onclick="document.getElementById('login').style.display='block'">Login</a>
+                    <li><a href="#" class="current" id="loginLink">Login</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="formPopUp" id="login">
+                            <div class="close" id="closeX">X</div>
+                            <form action="/message" method="post" class="form">
+
+                                <fieldset>
+                                    <p><label for="uname">UserName</label></p>
+                                    <input type="text" name="uname" id="uname" required="required">
+                                    <p><label for="password">Password</label></p>
+                                    <input type="password" name="pwd" id="password">
+                                </fieldset>
+
+                                <p>
+                                    <button type="submit" class="button" id="loginBtn">LOGIN</button>
+                                </p>
+
+                                <p>Not a member? <a href="#" id="signUpLink">Sign up!</a></p>
+
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -72,7 +94,6 @@
 
                     <h2>SEND US A MESSAGE</h2>
                     <form action="/message" method="post" novalidate>
-                        <span class="error" aria-live="polite"></span>
                         <fieldset>
                             <p><label for="name">First & Last Name</label></p>
                             <input type="text" placeholder="First & Last Name" name="name" id="name"
@@ -86,7 +107,7 @@
                         </fieldset>
 
                         <p>
-                            <button id="submit" class="button">SUBMIT</button>
+                            <button id="submit" type="submit" class="button">SUBMIT</button>
                         </p>
 
                     </form>

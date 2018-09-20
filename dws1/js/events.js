@@ -16,15 +16,17 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 // Close Login
-document.addEventListener('click', function(){
-    var hideLogin = document.getElementById('login');
-    document.onclick = function(e) {
-        if(e.target.id !== 'login'){
-            hideLogin.style.display = 'none';
-        }
-    };
-});
+function closeLogin(){
+    document.getElementById('login').style.display="none";
+}
 
+document.addEventListener('DOMContentLoaded', function(){
+    var loginBtn = document.getElementById('loginBtn');
+    loginBtn.addEventListener('click', closeLogin);
+
+    var closeX = document.getElementById('closeX');
+    closeX.addEventListener('click', closeLogin);
+});
 
 /* Form Validation */
 
@@ -36,16 +38,17 @@ var validateForm = function(submitEvent){
         submitEvent.stopPropagation();
 
         var form = submitEvent.target,
-            elements = form.elements;
+            elements = form.elements,
+            message = 'Please do not leave blank',
+            div = document.createElement('div');
 
-        for(var i = 0, len = elements.length; i < len; i++){
+        for(var i = 0; i < elements.length; i++){
             var element = elements[i];
 
             if(element.willValidate === true && element.validity.valid !== true){
-                var message = 'Please do not leave blank',
-                    parent = element.parentNode,
-                    div = document.createElement('div');
+                var  parent = element.parentNode;
 
+                element.classList.add('invalid');
                 div.appendChild(document.createTextNode(message));
                 div.classList.add('validation-message');
 
@@ -59,9 +62,8 @@ var validateForm = function(submitEvent){
     } else {
         return true;
     }
-
-
 };
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var forms = document.querySelectorAll('form');

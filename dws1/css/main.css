@@ -674,8 +674,12 @@ label {
     font-weight: 700;
 }
 
-p.form {
-    padding: 10px;
+.invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+.validation-message {
+    color: red;
 }
 
 input[type = text], [type = password] {
@@ -716,5 +720,11 @@ textarea {
     max-width: 300px;
     padding: 10px;
     background-color: #EEE;
+}
+
+.close {
+    float: right;
+    margin: 5px;
+    font-weight: 700;
 }
 

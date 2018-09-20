@@ -32,28 +32,29 @@
                     <li><img src="images/user.png" alt="User Login or Sign Up" title="User Login or Sign Up"
                              class="loginIcon"/></li>
                     <li><a href="#" class="current" id="loginLink">Login</a></li>
-                    <ul>
-                        <li>
-                            <div class="formPopUp" id="login">
-                                <form action="/message" method="post" class="form">
+                </ul>
+                <ul>
+                    <li>
+                        <div class="formPopUp" id="login">
+                            <div class="close" id="closeX">X</div>
+                            <form action="/message" method="post" class="form">
 
-                                    <fieldset>
-                                        <p><label for="uname">UserName</label></p>
-                                        <input type="text" name="uname" id="uname" required="required">
-                                        <p><label for="password">Password</label></p>
-                                        <input type="password" name="pwd" id="password">
-                                    </fieldset>
+                                <fieldset>
+                                    <p><label for="uname">UserName</label></p>
+                                    <input type="text" name="uname" id="uname" required="required">
+                                    <p><label for="password">Password</label></p>
+                                    <input type="password" name="pwd" id="password">
+                                </fieldset>
 
-                                    <p>
-                                        <button type="submit" class="button">LOGIN</button>
-                                    </p>
+                                <p>
+                                    <button type="submit" class="button" id="loginBtn">LOGIN</button>
+                                </p>
 
-                                    <p>Not a member? <a href="#" id="signUpLink">Sign up!</a></p>
+                                <p>Not a member? <a href="#" id="signUpLink">Sign up!</a></p>
 
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 
