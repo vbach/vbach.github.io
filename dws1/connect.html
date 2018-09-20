@@ -36,7 +36,7 @@
                         <div class="formPopUp" id="login">
                             <div class="close" id="closeX">X</div>
                             <form action="/message" method="post" class="form">
-
+                                <p id="loginerror"></p>
                                 <fieldset>
                                     <p><label for="uname">UserName</label></p>
                                     <input type="text" name="uname" id="uname" required="required">
@@ -93,17 +93,19 @@
                 <section id="contactForm">
 
                     <h2>SEND US A MESSAGE</h2>
-                    <form action="/message" method="post" novalidate>
+                    <form action="/message" method="post" id="contact" novalidate>
+                        <p id="error"></p>
+                        <p id="success"></p>
                         <fieldset>
                             <p><label for="name">First & Last Name</label></p>
                             <input type="text" placeholder="First & Last Name" name="name" id="name"
                                    required="required">
                             <p><label for="phone">Phone</label></p>
                             <input type="text" placeholder="Phone" name="phone" id="phone">
-                            <p><label for="sender_email">E-mail</label></p>
-                            <input type="text" placeholder="E-mail" name="email" id="sender_email" required="required">
+                            <p><label for="email">E-mail</label></p>
+                            <input type="text" placeholder="E-mail" name="email" id="email" required="required">
                             <p><label for="message">Message</label></p>
-                            <textarea name="message" id="message" required="required">How can we help you?</textarea>
+                            <textarea name="message" id="message" required="required"></textarea>
                         </fieldset>
 
                         <p>

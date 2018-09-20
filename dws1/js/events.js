@@ -30,40 +30,44 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* Form Validation */
 
-var validateForm = function(submitEvent){
+function validateForm(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
 
-    if(!submitEvent.target.checkValidity()) {
-        submitEvent.preventDefault();
-        submitEvent.stopImmediatePropagation();
-        submitEvent.stopPropagation();
+    //Connect Form
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var msg = document.getElementById('message');
+    var error = document.getElementById('error');
+    var success = document.getElementById('success');
 
-        var form = submitEvent.target,
-            elements = form.elements,
-            message = 'Please do not leave blank',
-            div = document.createElement('div');
-
-        for(var i = 0; i < elements.length; i++){
-            var element = elements[i];
-
-            if(element.willValidate === true && element.validity.valid !== true){
-                var  parent = element.parentNode;
-
-                element.classList.add('invalid');
-                div.appendChild(document.createTextNode(message));
-                div.classList.add('validation-message');
-
-                parent.insertBefore(div, element.previousSibling);
-
-                element.focus();
-                break;
-            }
-        }
-
-    } else {
-        return true;
+    if(!name.checkValidity() ){
+        error.style.display = "block";
+        success.style.display = "none";
+        error.innerHTML = "You forgot your name!<br/>";
     }
-};
 
+    if(!email.checkValidity()){
+        error.style.display = "block";
+        success.style.display = "none";
+        error.insertAdjacentHTML('beforeend', "You forgot your email!<br/>");
+    }
+
+    if(!msg.checkValidity()){
+        error.style.display = "block";
+        success.style.display = "none";
+        error.insertAdjacentHTML('beforeend', "We can't help you if you don't leave a message!");
+    }
+
+    else {
+        error.style.display = "none";
+        success.style.display = "block";
+
+        success.insertAdjacentHTML('afterbegin', "Thank you, " + name.value + "! We'll get back to you shortly!");
+        document.getElementById("contact").reset();
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     var forms = document.querySelectorAll('form');
