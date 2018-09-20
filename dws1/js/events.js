@@ -3,7 +3,7 @@
  * 
 */
 
-/* Login and Sign Up Pop Up Forms */
+/* Login */
 // Open Login
 var popUp = function(e) {
     e.preventDefault();
@@ -15,8 +15,19 @@ document.addEventListener('DOMContentLoaded', function(){
     login.addEventListener('click', popUp);
 });
 
+// Close Login
+document.addEventListener('click', function(){
+    var hideLogin = document.getElementById('login');
+    document.onclick = function(e) {
+        if(e.target.id !== 'login'){
+            hideLogin.style.display = 'none';
+        }
+    };
+});
+
 
 /* Form Validation */
+
 var validateForm = function(submitEvent){
 
     if(!submitEvent.target.checkValidity()) {
