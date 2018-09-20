@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="js/content.js"></script>
+    <script src="js/events.js"></script>
 </head>
 <body>
 <div id="wrapper">
+
+
     <header>
         <!-- Logo -->
         <div class="container">
@@ -22,19 +25,43 @@
             <!-- Navigation -->
             <nav>
                 <ul>
-                    <li><strong><a href="index.html" class="current">HOME</a></strong></li>
-                    <li>|</li>
-                    <li><a href="destinations.html">DESTINATIONS</a></li>
-                    <li>|</li>
-                    <li><a href="events.html">EVENTS</a></li>
-                    <li>|</li>
-                    <li><a href="connect.html">CONNECT</a></li>
+                    <li><strong><a href="index.html" class="current">Home</a></strong></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="connect.html">Connect</a></li>
                     <li><img src="images/user.png" alt="User Login or Sign Up" title="User Login or Sign Up"
                              class="loginIcon"/></li>
-                    <li><a href="#" class="current" onclick="document.getElementById('login').style.display='block'">LOGIN</a>
-                    </li>
+                    <li><a href="#" class="current" id="loginLink">Login</a></li>
+                    <ul>
+                        <li>
+                        <div class="formPopUp" id="login">
+                            <div class="close">X</div>
+                            <form action="/message" method="post" class="form">
+
+                                <fieldset>
+                                    <p><label for="uname">UserName</label></p>
+                                    <input type="text" name="uname" id="uname" required="required">
+                                    <p><label for="password">Password</label></p>
+                                    <input type="password" name="pwd" id="password">
+                                </fieldset>
+
+                                <p>
+                                    <button type="submit" class="button">LOGIN</button>
+                                </p>
+
+                                <p>Not a member? <a href="#" id="signUpLink">Sign up!</a></p>
+
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
                 </ul>
+
+
             </nav>
+
+
+
         </div>
     </header>
     <div class="container">
@@ -127,10 +154,9 @@
             <section id="hikers">
                 <h2>New Hikers</h2>
                 <ul>
-                    <li>Image
+                    <li>Image</li>
                     <li><strong>Smith, John</strong></li>
                     <li>Orlando, FL</li>
-                    </li>
                 </ul>
             </section>
 
