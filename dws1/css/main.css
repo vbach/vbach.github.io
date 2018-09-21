@@ -746,3 +746,9 @@ textarea {
     font-weight: 700;
 }
 
+#loginError {
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+}
+

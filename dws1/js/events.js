@@ -15,12 +15,20 @@ document.addEventListener('DOMContentLoaded', function(){
     login.addEventListener('click', popUp);
 });
 
+
 // Close Login
-function closeLogin(){
+function closeLogin(e){
+    e.preventDefault();
     document.getElementById('login').style.display="none";
-}
+
+    var changeName = document.getElementById('loginLink');
+    var username = document.getElementById('uname').value;
+    changeName.innerText = username;
+
+};
 
 document.addEventListener('DOMContentLoaded', function(){
+
     var loginBtn = document.getElementById('loginBtn');
     loginBtn.addEventListener('click', closeLogin);
 
