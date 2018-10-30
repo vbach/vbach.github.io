@@ -1,0 +1,48 @@
+header {
+    width: 100%;
+    background-color: $blue;
+    color: $header-color;
+    padding: 15px;
+    margin-bottom: 35px;
+    overflow: auto;
+}
+
+.container h1 {
+    grid-area: 1/1;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.container {
+    @extend %center-align;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    grid-template-rows: auto;
+    grid-gap: 0;
+    align-items: center;
+    @include desktop(){
+    width: 75%;
+    }
+}
+
+.task-container {
+    @extend %center-align;
+    padding: 0px 5px 5px 5px;
+    @include desktop(){
+    
+        width: 75%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 0.980em;
+    }
+    
+}
+

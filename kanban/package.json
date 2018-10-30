@@ -1,0 +1,31 @@
+{
+  "name": "dws2-kanban-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A kanban board project for the DWS2 class at Full Sail University.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve",
+    "build": "gulp sass"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dws2/kanban-vbach.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dws2/kanban-vbach/issues"
+  },
+  "homepage": "https://github.com/dws2/kanban-vbach#readme",
+  "dependencies": {
+    "@types/gulp-sass": "0.0.31",
+    "sass": "^1.14.1"
+  }
+}

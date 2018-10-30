@@ -1,0 +1,90 @@
+<!-- index.html -->
+<!-- Calendar SVG used under the 
+Creative Commons Attribution 4.0 Int. License
+given by fontawesome.com-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+                crossorigin="anonymous">
+        <title>DWS2: Kanban</title>
+</head>
+
+<body>
+        <!-- Add Task Pop Up -->
+
+        <div class="addTaskPopUp" hidden>
+                <div class="addTask">
+                        <p class="close"><a href="javascript:void(0)">X</a></p>
+                        <form method="POST" name="addTaskForm" id="addTaskForm" autocomplete="off" novalidate>
+                                <label for="category">Category:</label>
+                                <p><select name="category" id="category" size="1">
+                                                <option value="1">Backlog</option>
+                                                <option value="2">Implementation</option>
+                                                <option value="3">Complete</option>
+                                        </select></p>
+
+                                <label for="dueDate">Due Date:</label>
+                                <p><input type="date" id="dueDate" name="dueDate" required></p>
+
+                                <label for="title">Title:</label>
+                                <p><input type="text" id="title" name="title" aria-live="polite" required></p>
+
+                                <label for="description">Description:</label>
+                                <p><textarea name="description" id="description"></textarea></p>
+
+                                <button type="submit" id="addTaskBtn" class="addTaskBtn">Add Task</button>
+                                <button type="reset" id="reset" class="addTaskBtn right">Reset</button>
+
+
+                        </form>
+                </div>
+        </div>
+        <header>
+                <div class="container">
+                        <h1>Task Manager</h1>
+                        <div class="dropdown">
+                                <button class="dropbtn" aria-label="Theme-Color">
+                                        <!--<i class="far fa-circle"></i>-->
+                                        <svg aria-hidden="true" data-prefix="far" data-icon="circle" class="circle svg-inline--fa fa-circle fa-w-16"
+                                                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path class="circleColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"></path>
+                                        </svg>
+                                </button>
+
+                                <div class="dropdown-content" hidden>
+                                        <a href="#">Purple</a>
+                                        <a href="#">Black</a>
+                                        <a href="#">Red</a>
+                                        <a href="#">Default</a>
+                                </div>
+
+                        </div>
+                </div>
+        </header>
+
+        <main>
+                <div class="task-container">
+                        <section class="welcome">
+
+                                <h2>How to use:</h2>
+
+
+                                <div>
+                                        <p>To begin using Task Manager, click the button Add Task.</p>
+                                        <p>In the Add Task form choose a category, a due date, a title and add
+                                                a description (if needed).</p>
+                                        <p> To change the color theme, click the circle at the top right
+                                                and choose your preferred color.</p>
+                                </div>
+
+                        </section>
+                </div>
+        </main>
+        <script src="js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+%center-align {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%task-border {
+    border-left: 5px solid $blue;
+}
+
+%button {
+    background-color: $button-background;
+    color: $header-color;
+    font-size: $default-font;
+    padding: 5px 20px 5px 20px;
+    border: 0;
+    border-radius: 5px;
+}
+
+@mixin desktop {
+    @media #{$large}{
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media #{$medium}{
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media #{$small} {
+        @content;
+    }
+}
+
+html {
+    background-color: #EEE;
+    font-size: $default-font;
+
+    @include mobile{
+            font-size: $desktop-font;
+    }
+}
+
+body {
+    font-family: $font-stack;
+    color: $primary-color;
+}
+
+a {
+    color: $link-color;
+    font-weight: 700;
+    
+    &:visited{
+    color: $link-color;
+    }
+    &:active{
+        color: $link-color;
+
+    }
+    &:hover{
+        color: $hover;
+    }
+}
+
+.deadline24 {
+    @extend %task-border;
+    border-color: $deadline24hr;
+}
+
+.deadline48 {
+    @extend %task-border;
+    border-color: $deadline48hr;
+}
+
+.complete {
+    @extend %task-border;
+    border-color: $complete;
+    opacity: .50;
+
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+article {
+    @extend %task-border;
+    width: 100%;
+    background-color: #fff;
+    padding: 0.938em;
+    margin-bottom: 0.938em;
+    line-height: 1.5;
+    overflow: auto;
+    
+
+    &:hover {
+        background-color: rgba(253, 170, 39, 0.397);
+    }
+}
+
+section:last-of-type {
+    article {
+        @extend %task-border;
+        border-color: $complete;
+        opacity: .50;
+    
+        &:hover {
+            opacity: 1;
+            background-color: #fff;
+        }
+    }
+}
+
+h1 {
+    color: $header-color;
+    font-size: $headline-med;
+    font-weight: 900;
+
+    @include desktop{
+        font-size: $headline-lg;
+    }
+}
+
+h2 {
+    display: inline-block;
+    color: $headings-color;
+    font-size: $headline-med;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: $primary-color;
+    font-weight: bold;
+    @include tablet {
+        font-size: $desktop-font;
+    }
+    
+}
+
+p {
+    line-height: 1;
+}
+.far fa-circle {
+    color: #EEE;
+}
+
+strong {
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: $hover;
+}
+
+// Add Task Modal
+.addTask-toggle {
+    @extend %button;
+    float: right;
+    transition: 1s;
+    width: 100px;
+    height: 25px;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.addTaskPopUp {
+    display: none;
+    float: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 75%;
+
+    @include desktop(){
+        width: 25%;
+        }
+
+    overflow: auto;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    z-index: 1;
+}
+
+.addTask {
+    background-color: #FFF;
+    margin: 0 auto;
+    padding: 20px;
+    border: 10px solid  rgb(242, 99, 99);
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.close {
+    color: #000;
+    text-align: right;
+    font-size: $desktop-font;
+    font-weight: bold;
+}
+
+
+.addTaskBtn {
+    @extend %button;
+    margin-top: 10px;
+    width: 100%;
+    transition: 1s;
+        @include desktop(){
+            width: 100px;
+            padding: 10px;
+            font-size: $desktop-font;
+        }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// Form Styles
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #888;
+
+    
+}
+textarea {
+    height: 100px;;
+}
+
+input[type=text]:focus, input[type=date]:focus, textarea:focus{
+    border: 1px solid rgb(242, 160, 87);
+}
+
+form p {
+    margin: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    background-color: #FFF;
+    border: 1px solid #888;
+    border-radius: 5px;
+    @include desktop(){
+        font-size: $desktop-font;
+    }
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+
+//Validation
+input:focus:invalid {
+    outline: none;
+}
+
+.error {
+    width: 100%;
+    border: 1px solid $error;
+    border-left: 6px solid $error;
+}
+
+.error-txt {
+    color: $error;
+    font-size: 80%;
+    padding-top: 5px;
+
+}
+
+// SVGS
+.circle {
+    width: 50%;
+    transition: 1s;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.circleColor {
+    fill: #EEE;
+}
+
+.date {
+    background: url(../imgs/calendar-regular.svg) left no-repeat;
+    background-size: 12px;
+    text-indent: 15px;
+
+        @include desktop {
+        background-size: 14px;
+        text-indent: 20px;
+        }
+}
+
+// Drop Down Color Theme
+.navbar{
+    overflow: hidden;
+    grid-area: 1/2;
+    a{
+        float: left;
+        display: block;
+        font-size: $default-font;
+        color: #222;
+        text-decoration: none;
+    }
+}
+
+.dropdown{
+    overflow: hidden;    
+}
+
+.dropdown .dropbtn{
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    font-size: $default-font;
+
+    @include desktop {
+        background-color: #fff;
+    }
+
+    a {
+        float: none;
+        display: inline-block;
+        text-indent: -9999px;
+        width: 35px;
+        height: 35px;
+        border: 3px solid #fff;
+
+        @include desktop {
+        display: none;
+        position: relative;
+        width: 160px;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        text-indent: 0;
+        vertical-align: middle;
+        border: 0px;
+        border-bottom: 1px solid #FFF;
+        }
+    }
+    a:hover {
+        opacity: 0.75;
+    }
+
+    a:first-of-type {
+        background-color: rgb(55, 33, 84);
+        color: white;
+    }
+
+    a:nth-of-type(2){
+        background-color: #000;
+        color: white;
+    }
+
+    a:nth-of-type(3){
+        background-color: rgb(242, 99, 99);
+    }
+
+    a:last-of-type{
+        background-color: rgb(89, 181, 217);
+        border-bottom: 0px;
+    }
+}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
