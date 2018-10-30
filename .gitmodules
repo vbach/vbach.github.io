@@ -1,0 +1,3 @@
+[submodule "kanban-vbach"]
+	path = kanban-vbach
+	url = https://github.com/dws2/kanban-vbach.git
