@@ -208,28 +208,28 @@ function setStyles() {
     backgroundColor.style.backgroundColor = 'rgb(' + currentColor + ')';
 }
 const dropBtn = document.querySelector('dropbtn');
-document.addEventListener('click', e => {
-    if (e = e) {
-        let target = e.target;
+document.addEventListener('click', e => {        
 
-        const colorBar = document.querySelectorAll('.dropdown-content a');
+        const colorBar = document.querySelector('[type=color]').value;
+        localStorage.setItem('bgcolor', colorBar)
+        setStyles();
+        // const colorBar = document.querySelectorAll('.dropdown-content a');
 
-        if (target == colorBar[0]) {
-            localStorage.setItem('bgcolor', '55, 33, 84');
+        // if (target == colorBar[0]) {
+        //     localStorage.setItem('bgcolor', '55, 33, 84');
 
-            setStyles();
-        } else if (target == colorBar[1]) {
-            localStorage.setItem('bgcolor', '0, 0, 0');
+        //     setStyles();
+        // } else if (target == colorBar[1]) {
+        //     localStorage.setItem('bgcolor', '0, 0, 0');
 
-            setStyles();
-        } else if (target == colorBar[2]) {
-            localStorage.setItem('bgcolor', '242, 99, 99');
+        //     setStyles();
+        // } else if (target == colorBar[2]) {
+        //     localStorage.setItem('bgcolor', '242, 99, 99');
 
-            setStyles();
-        } else if (target == colorBar[3]) {
-            localStorage.setItem('bgcolor', '89, 181, 217');
+        //     setStyles();
+        // } else if (target == colorBar[3]) {
+        //     localStorage.setItem('bgcolor', '89, 181, 217');
 
-            setStyles();
-        }
-    }
-}, false)
+        //     setStyles();
+        // }
+    }, false)
