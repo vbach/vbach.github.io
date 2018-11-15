@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #133853;
+  }
+  .navbar .navbar-brand {
+    color: #eeeeee;
+  }
+  .navbar .navbar-brand:hover,
+  .navbar .navbar-brand:focus {
+    color: #fa6f3e;
+  }
+  .navbar .navbar-text {
+    color: #eee;
+  }
+
+  .navbar .navbar-text a {
+    color: #fa6f3e;
+  }
+  .navbar .navbar-text a:hover,
+  .navbar .navbar-text a:focus {
+    color: #fa6f3e; 
+  }
+  .navbar .navbar-nav .nav-link {
+    color: #eee;
+    border-radius: .25rem;
+    margin: 0 0.25em;
+  }
+  .navbar .navbar-nav .nav-link:not(.disabled):hover,
+  .navbar .navbar-nav .nav-link:not(.disabled):focus {
+    color: #fa6f3e;
+  }
+  .navbar .navbar-nav .nav-item.active .nav-link,
+  .navbar .navbar-nav .nav-item.active .nav-link:hover,
+  .navbar .navbar-nav .nav-item.active .nav-link:focus,
+  .navbar .navbar-nav .nav-item.show .nav-link,
+  .navbar .navbar-nav .nav-item.show .nav-link:hover,
+  .navbar .navbar-nav .nav-item.show .nav-link:focus {
+    color: #fa6f3e;
+    background-color: #133853;
+  }

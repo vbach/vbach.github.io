@@ -1,0 +1,454 @@
+html, body {
+    font-family: Merriweather, Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    background-color: #fff;
+    height: 100%;
+    overflow-x: hidden; 
+    margin: 0;
+}
+
+header {
+    background: url("../imgs/rawpixel-579231-unsplash.jpg") no-repeat fixed;
+    height: 35%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Headings */
+h1 {
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h2 {
+    font-family: Merriweather, Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-style: italic;
+    color: #FAC7B2;
+}
+
+h3 {
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    color: #133853;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #133853;
+}
+
+/* Links */
+a.nav-link{
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    color: #133853;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.nav > li > a:hover {
+    color: #FA6F3E;
+}
+
+a img {
+    border: 0;
+}
+
+a, a:visited, a:active {
+    color: #fa6f3e;
+}
+
+a:hover {
+    color: #133853;
+}
+
+/* Navbar */
+
+.subpageNav {
+    color: #eee; 
+}
+
+
+/* Jumbotron */
+.jumbotron {
+    background-color: #133853;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 50px 0 50px 0;
+}
+
+.jumbotron p {
+    color: #FFF;
+    font-weight: 100;
+    padding: 35px;
+    font-style: italic;
+}
+
+/* Buttons */
+.btn {
+    padding: 14px 34px;
+}
+
+.btn-default {
+    background-color: #5EB8B6;
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    color: #FFF;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 200px;
+}
+
+.btn-default:hover {
+    background-color: #FA6F3E;
+    transition: .5s ease;
+
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    margin: 0 auto;
+    border-left-width: 101px;
+    border-right-width: 99px;
+    border-top: 100px solid #133853;
+}
+
+/* Services Main */
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services ul li {
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    font-size: 26px;
+    color: #133853;
+    width: 100%;
+    padding: 25px 25px;
+    border: 1px solid #133853;
+    margin-bottom: 8px;
+}
+
+.services ul li:hover {
+    background-color: #133853;
+    color: #FFF;
+}
+
+.servicesInfo {
+    padding: 0 25px 0 25px;
+}
+
+.servicesInfo ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.servicesInfo li:before {
+    list-style-type: none;
+    content:'';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-image:url('../imgs/arrow-alt-circle-right-solid.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 2em;
+}
+
+.servicesInfo li {
+    padding-bottom: 20px;
+}
+
+/* Team Main */
+.team {
+    background-color: #5EB8B6;
+    padding: 50px 0 50px 0;
+}
+
+.team h3 {
+    color: #eee;
+}
+
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 100px;
+    border-left-width: 100px;
+    border-bottom: 100px solid #5EB8B6;
+    margin: 0 auto;
+}
+
+
+/* Contact Main */
+.contact {
+    padding: 50px 0 50px 0;
+}
+
+textarea {
+    outline: none;
+}
+
+.form-group p {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.input, textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #133853;
+}
+
+
+.form-group .btn-default {
+    width: 45%;
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #133853;
+    padding: 50px;
+    color: #eee;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #133853;
+    padding: 50px;
+  }
+
+.socialMedia {
+    color: #5EB8B6;
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+}
+
+.socialMedia:hover {
+    color: #FA6F3E;
+    transition: .5s ease;
+}
+
+footer a, a:visited, a:active {
+    color: #eee;
+}
+
+footer a:hover {
+    color: #FA6F3E;
+    text-decoration: none;
+}
+/* Sub Pages */
+.bg-dark {
+    background-color: #133853;
+}
+.breadcrumbs {
+    background-color: #FFF9F9;
+    padding: 25px 0 25px 0;
+    margin: 0px 0 50px 0;
+}
+
+.breadcrumb {
+    background-color: #FFF9F9;
+    border: 0;
+    font-size: 12px;
+}
+
+.breadcrumb a {
+    color: #133853;
+}
+
+.breadcrumb a:hover {
+    color: #FA6F3E;
+}
+
+.breadcrumb>.active {
+    color: #5EB8B6;
+}
+
+/* About Page */
+.about {
+margin-bottom: 50px;
+}
+
+/* Services Page */
+.card {
+    background-color: #133853;
+    margin-bottom: 25px;
+    color: #eee;
+}
+
+.card-title {
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.btn-primary {
+    background-color: #FA6F3E;
+    border: 0;
+    text-transform: uppercase;
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+    font-weight: 600;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+/* Contact */
+.contactPage {
+    margin-top: 50px;
+}
+
+    .contactPage h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .contactPage .socialMedia{
+        margin: 25px 10px 0 0;
+    }
+
+.info {
+    color: #133853;
+    font-size: 24px;
+    font-family: futura-pt, 'Century Gothic', sans-serif;
+}
+
+.contactIcons {
+    color: #fa6f3e;
+    width: 25px;
+    height: 25px;
+}
+
+.map {
+    margin: 50px 0 50px 0;
+    background-color: #5EB8B6;
+    padding: 50px 0 50px 0;
+}
+
+
+
+/* Image Hover Overlay */
+.team img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.hovereffect {
+    width:100%;
+    height:100%;
+    float:left;
+    overflow:hidden;
+    position:relative;
+    text-align:center;
+    cursor:default;
+    }
+    
+    .hovereffect .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    overflow:hidden;
+    top:0;
+    left:0;
+    opacity:0;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.5);
+    -webkit-transition:all .4s ease-in-out;
+    transition:all .4s ease-in-out
+    }
+    
+    .hovereffect img {
+    display:block;
+    position:relative;
+    -webkit-transition:all .4s linear;
+    transition:all .4s linear;
+    }
+    
+    
+    .hovereffect a.info {
+    text-decoration:none;
+    display:inline-block;
+    text-transform:uppercase;
+    color: #133853;
+    border:1px solid #133853;
+    background-color:transparent;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out;
+    margin:50px 0 0;
+    padding:7px 14px;
+    }
+    
+    .hovereffect a.info:hover {
+    box-shadow:0 0 5px #fff;
+    }
+    
+    .hovereffect:hover img {
+    -ms-transform:scale(1.2);
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
+    }
+    
+    .hovereffect:hover .overlay {
+    opacity:1;
+    filter:alpha(opacity=100);
+    }
+    
+    .hovereffect:hover h2,.hovereffect:hover a.info {
+    opacity:1;
+    filter:alpha(opacity=100);
+    -ms-transform:translatey(0);
+    -webkit-transform:translatey(0);
+    transform:translatey(0);
+    }
+    
+    .hovereffect:hover a.info {
+    -webkit-transition-delay:.2s;
+    transition-delay:.2s;
+    }
+
+/* Media Queries */
+@media only screen and (min-width: 768px){
+    body {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+
+    .jumbotron {
+        padding: 100px 0 100px 0;
+    }
+    .team {
+        padding: 100px 0 100px 0;
+    }
+
+    header {
+        min-height: 75%;
+    }
+
+    .services ul li {
+        width: 75%;
+    }
+}
