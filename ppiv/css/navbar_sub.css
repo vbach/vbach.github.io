@@ -1,3 +1,14 @@
+a.nav-link{
+  font-family: futura-pt, 'Century Gothic', sans-serif;
+  color: #eee;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.nav > li > a:hover {
+  color: #FA6F3E;
+}
+
 .navbar {
     background-color: #133853;
   }

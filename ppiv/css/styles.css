@@ -5,14 +5,49 @@ html, body {
     height: 100%;
     overflow-x: hidden; 
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 header {
+    position: relative;
     background: url("../imgs/rawpixel-579231-unsplash.jpg") no-repeat fixed;
-    height: 35%;
+    height: 75%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.pageDown {
+    margin: 0 auto;
+    z-index: 1030;
+    flex: 1;
+}
+
+.angleDown {
+    color: #FA6F3E;
+    width: 175px;
+    height: 175px;
+}
+
+.angleDown a:hover {
+    animation: bounce 1s;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
 }
 
 /* Headings */
@@ -47,16 +82,6 @@ h4 {
 }
 
 /* Links */
-a.nav-link{
-    font-family: futura-pt, 'Century Gothic', sans-serif;
-    color: #133853;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-.nav > li > a:hover {
-    color: #FA6F3E;
-}
 
 a img {
     border: 0;
@@ -445,7 +470,7 @@ margin-bottom: 50px;
     }
 
     header {
-        min-height: 75%;
+        height: 100%;
     }
 
     .services ul li {
