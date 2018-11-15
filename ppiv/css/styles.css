@@ -137,6 +137,11 @@ a:hover {
 
 }
 
+.btn-primary:hover {
+    background-color: #5EB8B6;
+    transition: .5s ease;
+}
+
 .triangle {
     width: 0;
     height: 0;
