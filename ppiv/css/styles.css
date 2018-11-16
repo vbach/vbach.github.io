@@ -157,6 +157,12 @@ a:hover {
 	transition: .5s ease;
 }
 
+.btn-primary {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+}
+
 .btn-primary:hover {
 	background-color: #5EB8B6;
 	transition: .5s ease;
