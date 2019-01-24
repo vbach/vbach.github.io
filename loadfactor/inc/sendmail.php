@@ -7,12 +7,12 @@ $mail = new PHPMailer();
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.sendgrid.net';                             // Specify main and backup SMTP servers
+$mail->Host = '';                             // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                                             // Enable SMTP authentication
-$mail->Username = 'vbach';                 // SMTP username
-$mail->Password = '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';             // SMTP password
+$mail->Username = '';                 // SMTP username
+$mail->Password = '';             // SMTP password
 $mail->SMTPSecure = tls;                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;                                    // TCP port to connect to
+$mail->Port = '';                                    // TCP port to connect to
 
 $message = "";
 $status = "false";
@@ -30,8 +30,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
         $botcheck = $_POST['form_botcheck'];
 
-        $toemail = 'vanessa.bach17@gmail.com'; // Your Email Address
-        $toname = 'Todd'; // Your Name
+        $toemail = ''; // Your Email Address
+        $toname = ''; // Your Name
 
         if( $botcheck == '' ) {
 
