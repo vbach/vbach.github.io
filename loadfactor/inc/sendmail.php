@@ -7,12 +7,12 @@ $mail = new PHPMailer();
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'yourdomain';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.sendgrid.net';                             // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                                             // Enable SMTP authentication
-$mail->Username = 'yourusername';                 // SMTP username
-$mail->Password = 'yourpassword';             // SMTP password
-$mail->SMTPSecure = false;                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 25;                                    // TCP port to connect to
+$mail->Username = 'vbach';                 // SMTP username
+$mail->Password = 'Nessa_1907';             // SMTP password
+$mail->SMTPSecure = tls;                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587;                                    // TCP port to connect to
 
 $message = "";
 $status = "false";
@@ -26,12 +26,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $phone = $_POST['form_phone'];
         $message = $_POST['form_message'];
 
-        $subject = isset($subject) ? $subject : 'New Message | Contact Form';
+        $subject = isset($subject) ? $subject : 'LoadFactor Studios | Contact Form Message';
 
         $botcheck = $_POST['form_botcheck'];
 
-        $toemail = 'yourmail'; // Your Email Address
-        $toname = 'Templatepath'; // Your Name
+        $toemail = 'vanessa.bach17@gmail.com'; // Your Email Address
+        $toname = 'Todd'; // Your Name
 
         if( $botcheck == '' ) {
 
