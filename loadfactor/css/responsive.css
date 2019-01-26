@@ -48,8 +48,22 @@
 	  	-moz-transition: all 300ms ease;
 	}
 
+	.imgae-column {
+		text-align: center;
+	}
+
+	.imgae-column figure img{
+		width: 300px;
+		
+	}
+
 	.about-image.style-2{
-		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.about-image img {
+		width: 300px;
 	}
 
 	.about-content.style-2{
@@ -75,14 +89,15 @@
 }
 
 
-@media only screen and (min-width: 767px){
+@media only screen and (min-width: 769px){
   .mobile-menu {
     display: none;
   }      
 }
 
 
-@media (max-width: 767px){
+@media (max-width: 768px){
+
 
 	.mainmenu-area{
 		margin-bottom: 0px;
