@@ -4,7 +4,7 @@ $email = $_POST['email'];
 $dropdown = $_POST['dropdown'];
 $message = $_POST['message'];
 $formcontent = "From: $name \n Message $message";
-$recipient = "vanessa.bach17@gmail.com";
+$recipient = "email here";
 $subject = "Contact Form";
 $mailheader = "From: $email\r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die ("Error!");
