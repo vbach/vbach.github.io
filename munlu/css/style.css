@@ -81,12 +81,6 @@
   right: 10px;
 }
 
-.muteBtnStyle>span.fas {
-  display: inline-block;
-  width: auto;
-  border-radius: 100%;
-  background: white;
-}
 
 .parallaxvideo:before {
   position: absolute;
