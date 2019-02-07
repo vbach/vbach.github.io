@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -166,9 +168,11 @@
                 </div>
         </section>
 
-        <div class="parallaxvideo padd-8">
-            <video autoplay muted loop id="index-video">
-                <source src="images/videos/index_videoplayback2.mp4" type="video/mp4">
+        <div class="parallaxvideo padd-1" id="video-index">
+            <btn class="muteBtnStyle"><span class="fas fa-volume-off"></span></btn>
+
+            <video playsinline autoplay muted loop id="index-video">
+                <source src="images/videos/aerial_forest_services.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -232,18 +236,22 @@
             <div class="auto-container">
                 <div class="footer-upper">
                     <div class="row clearfix">
-                        <div class="col-md-9 col-sm-6">
+                        <div class="col-md-8 col-sm-6">
                             <div class="logo">
                                 <a href="index.html"><img src="images/logo/logo_4.jpg" alt="Munlu Studios Video Editing" /></a>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
+
                             <ul class="social-icon-one">
                                 <li><a href="mailto:munlustudios@gmail.com"><span class="fa fa-envelope"></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCZTMGk5E2oJgun_Sq-0PDOw"><span class="fab fa-youtube"></span></a></li>
-                                <li><a href="#"><span class="fab fa-facebook"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-skype"></span></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCZTMGk5E2oJgun_Sq-0PDOw" target="_blank"><span
+                                            class="fab fa-youtube"></span></a></li>
+                                <li><a href="https://www.facebook.com/Munlustudios/" target="_blank"><span class="fab fa-facebook"></span></a></li>
+                                <li><a href="https://www.linkedin.com/in/munlu-studios-22033217a/" target="_blank"><span
+                                            class="fab fa-linkedin"></span></a></li>
+                                <li><a href="https://mobile.twitter.com/MunluStudios" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                                <li><a href="https://www.instagram.com/munlustudios/" target="_blank"><span class="fab fa-instagram"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -263,8 +271,10 @@
         </button>
         <!-- pre loader  -->
         <div class="preloader"></div>
-
-
+        <!-- video js -->
+        <script src="js/video.js"></script>
+        <!-- video js -->
+        <script src="js/video.js"></script>
         <!-- jQuery js -->
         <script src="js/jquery.js"></script>
         <!-- bootstrap js -->
