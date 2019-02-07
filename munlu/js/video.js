@@ -1,7 +1,7 @@
 // Mute/Turn Off Mute Video Index.html
-const muteOffBtn = document.querySelector('.parallaxvideo'),
+const muteOffBtn = document.querySelector('.ParallaxVideo'),
     video = document.getElementById('index-video');
-chngBtn = document.querySelector('.muteBtnStyle span');
+chngBtn = document.querySelector('.btn-mute span');
 
 muteOffBtn.addEventListener('click', () => {
     if (muteOffBtn.value === 'unmuted') {

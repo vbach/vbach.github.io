@@ -57,45 +57,28 @@
 @import url(../css/jquery.mCustomScrollbar.min.css);
 
 /* Video Styles */
-.parallaxvideo {
+.ParallaxVideo {
   height: 300px;
-  padding: 0 0 50px 0;
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
-.parallaxvideo video {
-  width: 100%;
-  position: relative;
-  top: -200px;
-  z-index: -999;
-}
-
-.muteBtnStyle {
-  position: absolute;
-  font-size: 36px;
-  color: #ef443b;
+.ParallaxVideo video {
+  min-width: 100%;
+  position: fixed;
   top: 0;
-  bottom: 0px;
-  right: 10px;
+  z-index: -9999;
 }
 
-
-.parallaxvideo:before {
-  position: absolute;
-  background: transparent;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  color: #ef443b;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+.ParallaxVideo .btn-mute {
+  color: #fff;
   font-size: 36px;
-  text-align: right;
+  font-weight: 700;
+  float: right;
+  text-transform: uppercase;
+  margin-right: 1%;
+  margin-top: -50px;
 }
-
 
 /* Custom Select Style */
 .custom-select {
@@ -1110,6 +1093,7 @@ textarea {
 */
 .rev_slider_wrapper {
   z-index: 0;
+  background: #181818;
 }
 
 .rev_slider_wrapper .slide-content-box h5 {
