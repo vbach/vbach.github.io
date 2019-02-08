@@ -58,8 +58,6 @@
 
 /* Video Styles */
 .ParallaxVideo {
-  height: 300px;
-  padding-bottom: 50px;
   padding-top: 50px;
 }
 
@@ -78,6 +76,11 @@
   text-transform: uppercase;
   margin-right: 1%;
   margin-top: -50px;
+}
+
+iframe {
+  width: 100%;
+  height: 390px;
 }
 
 /* Custom Select Style */
@@ -305,6 +308,10 @@ textarea {
   padding: 10px 0 10px 0;
 }
 
+.padd-9 {
+  padding: 0px 0 200px 0;
+}
+
 /*clear_fix*/
 .clear_fix {
   clear: both;
@@ -429,7 +436,7 @@ textarea {
 
 /*Btn Style three*/
 .btn-style-three {
-  color: #aaa;
+  color: #fbc20f;
   border-color: #fff;
   transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
@@ -439,7 +446,7 @@ textarea {
 }
 
 .btn-style-three:hover {
-  color: #fbc20f;
+  color: #13b6ff;
 }
 
 /*Btn Style four*/
@@ -666,6 +673,15 @@ textarea {
   padding: 20% 0 0;
 }
 
+@media only screen and (max-width: 425px) {
+  .social-icon-one {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+}
+
+
 .social-icon-one li {
   position: relative;
   margin-right: 10px;
@@ -721,7 +737,7 @@ textarea {
 
 .sec-title h1 {
   font-size: 180px;
-  color: rgba(51, 51, 51, 0.34);
+  color: #fff;
   font-weight: 700;
   z-index: 2;
   position: relative;
@@ -1326,6 +1342,7 @@ textarea {
   position: relative;
   text-align: center;
   margin-bottom: 40px;
+  padding: 20px 20px 0px;
 }
 
 .fact-counter .column.mt {
@@ -1375,7 +1392,7 @@ textarea {
   font-size: 18px;
   font-weight: 400;
   font-family: "Hind", Sans-serif;
-  color: #aaa;
+  color: #fff;
 }
 
 /*styled-pagination*/
@@ -1800,6 +1817,10 @@ textarea {
   background-repeat: no-repeat;
 }
 
+.parallax-style-two .auto-container {}
+
+
+
 /*filters-style-one*/
 .filters-style-one {
   text-align: center;
@@ -2002,11 +2023,12 @@ textarea {
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background: #181818;
+  background: transparent;
 }
 
 .services-style-two .auto-container {
   max-width: 1400px;
+  height: 100%;
 }
 
 /*Services Block one*/
@@ -2094,7 +2116,7 @@ textarea {
   position: relative;
   padding: 50px 30px 60px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.38);
+  background: rgba(0, 0, 0, 0.788);
 }
 
 .services-block-two .inner-box .icon {
@@ -2138,7 +2160,7 @@ textarea {
 
 .services-block-two .inner-box .text {
   position: relative;
-  color: #848484;
+  color: rgba(255, 255, 255, 0.829);
   font-size: 18px;
   font-weight: 300;
   line-height: 1.6em;
@@ -2362,6 +2384,7 @@ textarea {
 .blog-single .inner-box .lower-box .author li {
   display: inline-block;
   margin-right: 20px;
+  color: #aaa;
 }
 
 .blog-single .inner-box .lower-box .author li a {
@@ -2377,6 +2400,23 @@ textarea {
 .blog-single .inner-box .lower-box .author li i {
   font-size: 14px;
   margin-right: 8px;
+}
+
+.blog-single .inner-box .lower-box h2 a {
+  position: relative;
+  font-weight: 500;
+  line-height: 32px;
+  margin-bottom: 30px;
+  color: #fbc20f;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.blog-single .inner-box .lower-box h2 a:hover {
+  color: #13b6ff;
 }
 
 .blog-single .inner-box .lower-box h3 {
@@ -3478,7 +3518,7 @@ textarea {
 
 .sidebar .popular-posts .post a,
 .sidebar .popular-posts .post a:hover {
-  color: #fbc20f;
+  color: #13b6ff;
 }
 
 .sidebar .popular-posts .post-info {
