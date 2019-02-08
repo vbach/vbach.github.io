@@ -61,6 +61,10 @@
   padding-top: 50px;
 }
 
+.service-video {
+  height: 300px;
+}
+
 .ParallaxVideo video {
   min-width: 100%;
   position: fixed;
@@ -269,7 +273,8 @@ textarea {
 /*boxed_wrapper*/
 .boxed_wrapper {
   position: relative;
-  margin: 0 auto;
+  margin: 0;
+  margin-bottom: 0;
   width: 100%;
   min-width: 300px;
   overflow: hidden;
@@ -1205,6 +1210,8 @@ textarea {
 .main-footer {
   position: relative;
   background-color: #000000;
+  top: 0;
+  bottom: 0;
 }
 
 .main-footer .footer-upper {
