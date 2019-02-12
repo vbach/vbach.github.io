@@ -57,6 +57,13 @@
 @import url(../css/jquery.mCustomScrollbar.min.css);
 
 /* Video Styles */
+
+.test {
+  background: #181818;
+  height: 100px;
+  content: '';
+}
+
 .ParallaxVideo {
   padding-top: 50px;
 }
@@ -3148,6 +3155,14 @@ textarea {
 */
 .contact-section {
   background: #181818;
+}
+
+.contact-section h1 {
+  color: #fbc20f;
+}
+
+.contact-section h5 {
+  color: #aaa;
 }
 
 /*Comment Form*/
