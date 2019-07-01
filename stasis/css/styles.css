@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,700,900&display=swap');
+:root {
+  --blue: #B5E9F4;
+  --black: #000;
+  --red: #B50000;
+  --yellow: #FFFFA3;
+  --white: #fff;
+  --gray: #F0F0F0;
+  --gray-dark: #343a40;
+  --primary: #B5E9F4;
+  --secondary: #FFFFA3;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #242424;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-primary: 'Roboto Condensed', Arial, sans-serif;
+  --font-family-secondary: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--gray);
+  font-family: var(--font-family-secondary);
+  font-size: 16px;
+}
+
+a {
+  color: var(--gray);
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+.wrapper {
+  width: 95%;
+}
+
+/* Headings */
+h1 > a {
+  color: var(--red);
+  font-family: var(--font-family-primary);
+  font-size: 81px;
+  font-weight: 900;
+}
+
+h1 > a:hover {
+  text-decoration: none;
+  color: var(--red);
+}
+
+h2 {
+  font-family: var(--font-family-primary);
+  color: var(--gray);
+  font-weight: 900;
+}
+h3{
+  color: var(--blue);
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+h4{
+  color: var(--gray);
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.btn-lg, .btn-primary {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  border-radius: 5;
+  color: var(--gray-dark);
+  font-family: var(--font-family-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: var(--gray-dark);
+  color: var(--gray);
+  border-color: var(--blue);
+}
+
+/* Nav */
+.navbar {
+  background-color: var(--dark);
+  min-height: 100px;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* CAROUSEL */
+.carousel-caption {
+  right: auto;
+  text-align: left;
+  left: 0;
+  bottom: 100px;
+  padding: 30px 0 20px 7%;
+  z-index: 99;
+  width: 50%;
+  background: rgba(181, 233, 244, 0.5);
+}
+
+.carousel-img {
+  width: 100%;
+}
+
+.carousel-item {
+  max-height: 85vh !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  left: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--blue);
+}
+
+#myCarousel .list-inline {
+  white-space:nowrap;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+
+#myCarousel .carousel-indicators {
+  position: static;
+  left: initial;
+  margin-top: 10px;
+  width: initial;
+  margin-left: initial;
+}
+
+#myCarousel .carousel-indicators > li {
+  width: initial;
+  height: initial;
+  text-indent: initial;
+}
+
+#myCarousel .carousel-indicators > li.active img {
+  opacity: 0.7;
+}
+
+/* ABOUT/MAIN AREA */
+
+main {
+  background: url('/testing/assets/images/slider/fullsize/bright_edges.jpg') var(--dark) no-repeat;
+  background-size: cover;
+  border-top: 7px solid var(--blue);
+  border-bottom: 7px solid var(--blue);
+}
+
+.about,
+.twitch {
+  padding: 25px;
+}
+
+/* CTA */
+.cta > span {
+  font-size: 26px;
+  color: var(--gray);
+}
+
+.cta > p {
+  font-size: 48px;
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.cta > p > a {
+  font-size: 48px;
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.recruitment {
+  border-top: 7px solid var(--blue);
+  border-bottom: 7px solid var(--blue);
+  padding: 50px 0 50px 0;
+}
+
+
+/* Forms */
+
+label {
+  margin: 10px 0 10px 0;
+}
+
+.error {
+  color: var(--red);
+}
+
+.confirmation {
+  color: var(--gray);
+  font-family: var(--font-family-secondary);
+  text-align: center;
+  border: 1px solid var(--blue);
+  padding: 25px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.form-control
+ {
+  background-color: var(--dark);
+  border: 1px solid var(--gray);
+  border-radius: 5;
+  color: var(--gray);
+}
+.form-control:focus {
+  border-color: var(--gray);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--blue);
+  outline: 0 none;
+  background-color: var(--gray-dark);
+  color: var(--gray);
+}
+
+/* Responsive media queries */
+@media only screen and (max-width: 768px){
+  .carousel-caption {
+    margin: 0 auto;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .twitch {
+    text-align: center;
+  }
+
+  .nav-item {
+    text-align: center;
+  }
+}
