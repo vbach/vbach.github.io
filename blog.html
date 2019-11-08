@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Vanessa Bach - Portfolio and Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top px-0 py-0 mx-0 my-0"
+      id="mainNav"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img
+            src="img/logo.png"
+            class="img-fluid logo"
+            alt="Vanessa Bach Web Design and Development"
+        /></a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">My Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Server-side Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agile.html">Agile PM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agile.html">WD6 Video Updates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header
+      class="masthead"
+      style="background-image: url('img/laptop-home.png')"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Server-side Blog</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 id="week1" class="section-heading">WD6 Week 1 - Research</h2>
+            <p>Git feature branching is a great way to duplicate a project or part of a project so that you are not working on the original source code. Instead of us duplicating the motoshop project literally on our local computers, with git we can create a branch that duplicates the motoshop and allows us to make any changes from there forward without affecting the original source. Outside of avoiding editing the original source, branching is great for implementing new features to the project. Creating a branch for each of the features of our CPR will let us build and test the features we plan to develop for our cart without breaking what is already completed and functionally working. Through the branching and workflow of git, it gives us a bit of direction and a guide of what we are currently working on and working toward.</p>
+
+            <p>It is important to write effective epics and user stories as these are the most essential problems we are trying to solve. These epics are solving what our customers value most in the application. By writing effective user stories, as developers we can identify the most valuable way to deliver the solution. An effective user story should be small, achievable and should drastically cut down on the time to deliver the solution.</p>
+
+            <p>Flowcharts are a great way to break down the user and data flow of your project. Essentially it is a chart that shows how a user will get from A to Z and the options that come in between. Psuedo code is great for prototyping as it can break down what needs to occur for something to happen. It can be read by anyone, independent of the programming language, and explains what each line of code should do once development begins.</p>
+
+            <p>My portfolio website is https://vanessabach201864392.wordpress.com/. I would like to update it with more inviting colors and imagery, as well as possibly a suitable logo for it. Right now, as it stands, it’s not very personal but also not professional either. I’d like to find the fine line between the two as it is my personal portfolio that I should be presenting to professionals. I also need to do some clean up with the individual pages, such as skill set, as my skill set has expanded beyond this point. I’d eventually like to share blog posts that either explain a concept or share useful websites that I have found and discovered over my career and education.</p>
+
+            <h2 id="week2" class="section-heading">Week 2 - Research</h2>
+
+            
+              Part I – React/Redux Research<br/>
+              <p>According to the research material provided, Flux is an architecture and Redux is a library. They both have many similarities such as both use actions and can both be used with React. Some of the biggest differences are that Flux can maintain multiple stores, while Redux only has one. Redux is also by far more popular than Flux in the open source community. Flux also still uses dispatchers, where Redux’s dispatcher is baked in. </p>
+              
+              <p>Two of the biggest advantages to using Redux with React is that it makes it easier to understand the data flow in your application and it also centralizes the state. It works well with using state displayed in different locations. So instead of having to lift state up, it is located in the Redux store which is accessible by all components. This is an advantage of using Redux in our cart revamp. Since we need a lot of the data to be usable in multiple components, without the headache of lifting state up with using only React, Redux comes to the rescue creating aa central store for all the state pertaining to our app.</p>
+              
+              
+              Part II - Commerce Project ReVamp (CPR) Research<br/>
+              <p>This week I focused on generating the total price for the cart in addition to directing the user to the cart after they added an item. I also was able to get the quantity to appear by the cart icon on the navigation bar as well. These two items did not require much research, except I did refer back to the Redux portion of ASL. I am beginning to work out how the signup/login portion of the site will work, which is requiring quite a bit of research. I’ve begun by reviewing the materials on sessions, databases, authentication and oAuth on ASL. I am considering using a node package called <a href="https://www.npmjs.com/package/passport" target="new">passport</a> for authentication purposes. It will maintain login sessions and can be used with express.</p> 
+               
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr />
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <ul class="list-inline text-center">
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/vanessa-bach/">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/nessalbach">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://github.com/vbach">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <p class="copyright text-muted">
+                Copyright &copy; Vanessa Bach 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+      <!-- Custom scripts for this template -->
+      <script src="js/clean-blog.min.js"></script>
+    </body>
+  </html>
